@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Web Dev Guide — a structured reference to HTML5 elements, semantics, accessibility, multimedia, forms, SVG, MathML, and more."
+  >
+
+  <title>HTML5 — Web Dev Guide</title>
+
+  <link
+    rel="stylesheet"
+    href="html.css"
+  >
+
+  <link
+    rel="icon"
+    href="favicon.ico"
+    type="image/png"
+  >
+</head>
+
+<body class="tech-page tech-page--html">
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+  <header class="tech-header">
+
+    <div class="tech-header-inner">
+
+      <div class="search-container">
+        <label
+          class="search-label"
+          for="search-input"
+        >
+          HTML REFERENCE SEARCH
+        </label>
+
+        <div class="search-field">
+          <span
+            class="search-icon"
+            aria-hidden="true"
+          >
+            ⌕
+          </span>
+
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Search technology, concept or tag..."
+            autocomplete="off"
+          >
+        </div>
+      </div>
+
+      <div class="tech-hero">
+
+        <div class="tech-badge">
+          HTML5
+        </div>
+
+        <div class="tech-title-row">
+          <div>
+            <p class="tech-kicker">
+              WEB DEV GUIDE
+            </p>
+
+            <h1>
+              HTML<span>5</span>
+            </h1>
+          </div>
+
+          <div class="tech-index">
+            <span>01</span>
+            <small>TECHNOLOGY</small>
+          </div>
+        </div>
+
+        <p class="tech-intro">
+          HTML (HyperText Markup Language) is the standard markup language
+          used to structure and organize content on web pages. Its main
+          function is to define the elements of a website, such as headings,
+          paragraphs, images, links, lists, and forms. HTML provides the basic
+          structure of a web page.
+        </p>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       TABLE OF CONTENTS
+       ===================================================== -->
+
+  <nav class="toc" aria-label="HTML table of contents">
+
+    <div class="toc-inner">
+
+      <div class="toc-header">
+        <div>
+          <p class="toc-kicker">CONTENTS</p>
+          <h2>HTML Reference</h2>
+        </div>
+
+        <span class="toc-count">
+          18 BLOCKS
+        </span>
+      </div>
+
+      <div class="toc-links">
+
+        <a href="#block-1">
+          <span>01</span>
+          Base Structure and Root
+        </a>
+
+        <a href="#block-2">
+          <span>02</span>
+          Document Metadata and Configuration
+        </a>
+
+        <a href="#block-3">
+          <span>03</span>
+          Resource Links and Scripts
+        </a>
+
+        <a href="#block-4">
+          <span>04</span>
+          Semantic Site Structure
+        </a>
+
+        <a href="#block-5">
+          <span>05</span>
+          Headings and Text Hierarchy
+        </a>
+
+        <a href="#block-6">
+          <span>06</span>
+          Paragraphs and Block Text Formatting
+        </a>
+
+        <a href="#block-7">
+          <span>07</span>
+          Inline Text Formatting and Emphasis
+        </a>
+
+        <a href="#block-8">
+          <span>08</span>
+          Specialized Text Semantics
+        </a>
+
+        <a href="#block-9">
+          <span>09</span>
+          Links and Hyperlinks
+        </a>
+
+        <a href="#block-10">
+          <span>10</span>
+          Multimedia and Images
+        </a>
+
+        <a href="#block-11">
+          <span>11</span>
+          Lists and Data Structures
+        </a>
+
+        <a href="#block-12">
+          <span>12</span>
+          Data Tables
+        </a>
+
+        <a href="#block-13">
+          <span>13</span>
+          Forms and Data Capture
+        </a>
+
+        <a href="#block-14">
+          <span>14</span>
+          Advanced Multimedia and Content
+        </a>
+
+        <a href="#block-15">
+          <span>15</span>
+          Interactivity and Dynamic Components
+        </a>
+
+        <a href="#block-16">
+          <span>16</span>
+          Accessibility and Narrative Regions
+        </a>
+
+        <a href="#block-17">
+          <span>17</span>
+          Integrated Vector Graphics
+        </a>
+
+        <a href="#block-18">
+          <span>18</span>
+          Mathematical Markup Language
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+
+  <main class="guide-content">
+
+
+    <!-- BLOCK 1 -->
+    <section id="block-1" class="guide-section">
+
+      <div class="section-heading">
+
+        <div class="section-number">01</div>
+
+        <div>
+          <p class="section-kicker">FOUNDATION</p>
+          <h2>Base Structure and Root</h2>
+          <p class="section-description">
+            The fundamental elements that establish the structure and root
+            of every HTML document.
+          </p>
+        </div>
+
+      </div>
+
+
+      <article>
+        <h3>&lt;!DOCTYPE html&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to inform the browser of the exact version and standard of
+          HTML with which the file was built. It informs the rendering engine
+          about which set of syntactic rules it must apply to process the code
+          in a standardized manner.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          When the browser engine begins parsing the document, this instruction
+          triggers modern standard rendering mode (HTML5 Standard), preventing
+          the browser from entering "Quirks Mode" (compatibility mode for old
+          or legacy code) which would cause unpredictable layout behavior.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          On the very first line of any HTML document or file, before any other
+          tag or space.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;!DOCTYPE html&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;html&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves as the main root container that encapsulates all elements and
+          nodes that make up the web page. It defines the complete scope of the
+          web document.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          The browser takes this tag and creates the main root node within the
+          DOM (Document Object Model) tree structure. All other visual and
+          technical elements are nested hierarchically inside it, also allowing
+          the main language of the document to be declared using the
+          <code>lang</code> attribute.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          In every web project; it must open right after
+          <code>&lt;!DOCTYPE html&gt;</code> and close at the end of the file.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;html lang="en"&gt;...&lt;/html&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;head&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to store global configurations, technical links, initial
+          scripts, and document metadata that are not displayed directly on
+          the visual canvas of the page.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          The browser analyzes and processes this block before proceeding to
+          draw the graphical elements. It extracts information about character
+          encoding, external stylesheets to download, required scripts, search
+          engine optimization, and tab titles.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          Mandatorily inside the <code>&lt;html&gt;</code> element, always
+          located before the <code>&lt;body&gt;</code> tag.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;head&gt;&lt;meta charset="UTF-8"&gt;&lt;title&gt;Page Title&lt;/title&gt;&lt;/head&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;body&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to house all the structured content and visual interface with
+          which the end user will interact in the browser window.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          The rendering engine processes child nodes inside
+          <code>&lt;body&gt;</code> and applies Layout, Paint, and Compositing
+          algorithms to convert the HTML into visible shapes, text, buttons,
+          images, and interactivity on screen.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          In all HTML documents, immediately after the closing
+          <code>&lt;/head&gt;</code> tag.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;body&gt;&lt;h1&gt;Welcome to my website&lt;/h1&gt;&lt;p&gt;This is the visible content.&lt;/p&gt;&lt;/body&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 2 -->
+    <section id="block-2" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">02</div>
+
+        <div>
+          <p class="section-kicker">DOCUMENT</p>
+          <h2>Document Metadata and Configuration</h2>
+          <p class="section-description">
+            Metadata and configuration elements that define how the document
+            is interpreted, indexed, and presented.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;meta charset&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to specify the character encoding map or table that the
+          computer system must use to correctly interpret all the text in
+          the file.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          The browser interprets the bytes stored on the server using the
+          UTF-8 standard, guaranteeing faithful rendering of accents, tildes,
+          punctuation marks, special characters (such as 'ñ'), and
+          international symbols without graphical alterations.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          Always, ideally in the first few lines of the
+          <code>&lt;head&gt;</code> section to prevent prior rendering errors.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;meta charset="UTF-8"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;meta viewport&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to control and calibrate the scale and dimensions of the
+          display area (viewport) on mobile devices and tablets.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          Instructs the mobile browser to match the width of the logical
+          viewport with the physical screen width of the device
+          (<code>width=device-width</code>) and set the initial zoom level to
+          100% (<code>initial-scale=1.0</code>), preventing the browser from
+          rendering the page with zoomed-out desktop scaling.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          In the header of any project oriented toward responsive web design.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;meta description&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to provide a concise and descriptive summary of the page's
+          purpose or content to search engines and aggregators.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          Search crawlers or bots (like Googlebot) extract this text and
+          frequently use it as the descriptive snippet displayed beneath the
+          title in search engine results pages (SERPs).
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          In the header of each individual public page to boost click-through
+          rate (CTR) and SEO optimization.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;meta name="description" content="Complete and structured guide with all key concepts of HTML5 explained step by step."&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;meta robots&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to transmit explicit indexing and crawling directives to
+          automated search engines.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          Modifies the behavior of engines by indicating whether they should
+          include the page in their public indexes
+          (<code>index/noindex</code>) and whether they should crawl the
+          hyperlinks contained within it (<code>follow/nofollow</code>).
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          To prevent indexing of private dashboards, drafts, pages under
+          development, or duplicate policy pages.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;meta name="robots" content="index, follow"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;meta http-equiv&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to simulate sending HTTP response headers directly from the
+          HTML structure when configuring the web server is not possible.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          The browser interprets the value of the specified property as if it
+          came from the HTTP network protocol, executing actions such as
+          scheduled reloads or rendering compatibility settings.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          To force periodic automatic refreshes, set security policies like
+          CSP, or adjust compatibility modes.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;meta http-equiv="refresh" content="30"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;title&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to define the official identifying name or title of the
+          document.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          Displays its textual content in the top tab of the browser window,
+          in the operating system taskbar, in navigation history, and as the
+          main title in bookmarks and search engines.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          Mandatorily in all web documents, inside the
+          <code>&lt;head&gt;</code> section.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;title&gt;Learn HTML5 from Scratch | Professional Handbook&lt;/title&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;base&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to set an absolute base URL address from which all relative
+          paths present in the file are resolved.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          When the browser encounters a link or resource with a relative
+          path, it automatically prepends the value specified in the
+          <code>href</code> property of the <code>&lt;base&gt;</code> tag.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          When restructuring massive directories or needing to redirect all
+          fonts and images to a CDN or centralized server.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;base href="https://cdn.mycompany.com/assets/"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;meta name="keywords"&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to list a series of terms and keywords associated with the
+          thematic concept of the page.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          Stores comma-separated descriptors that guided search engines in the
+          early days of the web, although modern search engines no longer
+          take it into account as a direct ranking factor for SEO.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          As internal metadata or for organizational search systems within
+          intranets.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;meta name="keywords" content="HTML5, web development, programming, frontend, code"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;meta name="author"&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to indicate the technical or intellectual authorship
+          responsible for creating the document.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          Allows content management systems (CMS), web archiving systems,
+          and document readers to formally attribute ownership of the content.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          In academic articles, blogs, news publications, and corporate
+          documentation.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;meta name="author" content="Ana Martínez"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;meta name="theme-color"&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to customize the chromatic tone of the browser interface
+          environment on mobile devices.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          Mobile operating systems (such as Android and iOS) adapt the
+          background color of the top status bar and browser navigation bar
+          using the provided hexadecimal value.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          In progressive web applications (PWA) or to reinforce corporate
+          visual identity on mobile devices.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;meta name="theme-color" content="#2563eb"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;meta property&gt; (Open Graph)</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to control how the interactive summary of a page is displayed
+          when linked or shared on social media platforms.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          Crawlers from platforms like Facebook, LinkedIn, or WhatsApp read
+          properties such as <code>og:title</code>, <code>og:image</code>,
+          and <code>og:description</code> to generate an attractive preview
+          card with an image, title, and short text.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          On all public pages likely to be shared by users across social
+          channels.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;meta property="og:title" content="Complete HTML5 Course"&gt;
+&lt;meta property="og:image" content="https://site.com/banner.jpg"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;meta name="twitter:card"&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to configure the visual format of the rich card when sharing
+          a link on the Twitter/X platform.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          Specifies whether Twitter should structure the outgoing tweet with
+          a small card or a preview with a large highlighted image.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          To optimize the visual impact of content published and shared on
+          Twitter/X.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;meta name="twitter:card" content="summary_large_image"&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 3 -->
+    <section id="block-3" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">03</div>
+
+        <div>
+          <p class="section-kicker">RESOURCES</p>
+          <h2>Resource Links and Scripts</h2>
+          <p class="section-description">
+            Elements used to connect stylesheets, icons, scripts, and other
+            external resources to an HTML document.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;link rel="stylesheet"&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to link external CSS stylesheets to the HTML document.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          The browser issues a parallel network request to download the
+          <code>.css</code> file and applies its design and layout rules over
+          the element tree.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          Whenever you wish to apply modular and clean visual styles from
+          independent CSS files.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;link rel="stylesheet" href="styles/main.css"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;link rel="icon"&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to establish the distinctive icon (favicon) of the website.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          The browser downloads the image (in <code>.ico</code>,
+          <code>.png</code>, or <code>.svg</code> format) and renders it next
+          to the window tab and in the bookmarks menu.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          In every web development project to provide visual identity and
+          quick recognition to the site.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;link rel="icon" href="assets/favicon.svg" type="image/svg+xml"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;link rel="canonical"&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to indicate the canonical or original URL of content that
+          may be duplicated across multiple addresses.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          Informs search engines which web address is the legitimate one they
+          should index and rank, consolidating SEO authority into a single
+          source.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          In online stores with products accessible from multiple categories
+          or URL variants.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;link rel="canonical" href="https://mysite.com/products/blue-shirt"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;script&gt; (Internal)</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to write and embed programmatic JavaScript logic directly
+          inside the HTML file itself.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          The JavaScript execution engine temporarily pauses HTML parsing,
+          interprets, and executes the code block immediately.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          For small test scripts or very short initial dynamic configurations.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;script&gt;console.log("Application initialized successfully.");&lt;/script&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;script src&gt; (With defer attribute)</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to link an external deferred executable JavaScript file.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          Downloads the script file in the background without interrupting
+          HTML parsing or visual rendering, executing it sequentially once
+          the HTML document has finished building.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          For interface scripts that manipulate DOM elements and require the
+          HTML to be completely constructed.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;script src="js/app.js" defer&gt;&lt;/script&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;script src&gt; (With async attribute)</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to execute an external script asynchronously as soon as its
+          download completes.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          The browser downloads the script in the background and pauses only
+          for the instant required to execute it as soon as the download
+          finishes, regardless of the HTML loading state.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          For independent scripts that do not depend on the DOM structure or
+          other scripts (e.g., web analytics, advertising banners).
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;script src="https://analytics.com/tracker.js" async&gt;&lt;/script&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;style&gt;</h3>
+
+        <p>
+          <strong class="label-meta">Function:</strong>
+          Serves to embed CSS style rules and properties within the HTML
+          document itself.
+        </p>
+
+        <p>
+          <strong class="label-meta">How it works:</strong>
+          The rendering engine applies the CSS rules written inside it
+          instantaneously when processing the node, without making additional
+          network requests.
+        </p>
+
+        <p>
+          <strong class="label-meta">When to use:</strong>
+          To declare critical CSS necessary for the above-the-fold view or
+          small prototyping tests.
+        </p>
+
+        <p class="syntax-line">
+          <strong class="label-syntax">Syntax:</strong>
+        </p>
+
+        <pre>&lt;style&gt;body { font-family: sans-serif; background-color: #f4f4f9; }&lt;/style&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 4 -->
+    <section id="block-4" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">04</div>
+
+        <div>
+          <p class="section-kicker">SEMANTICS</p>
+          <h2>Semantic Site Structure</h2>
+          <p class="section-description">
+            Semantic containers that define the structural regions and
+            hierarchy of a web page.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;header&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to structure the top introductory block or header of a page or section.</p>
+        <p><strong class="label-meta">How it works:</strong> Semantically delimits logos, titles, navigation menus, or search engines, informing assistive technology of its introductory nature.</p>
+        <p><strong class="label-meta">When to use:</strong> In the top header of a website or at the beginning of sections and articles.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;header&gt;&lt;h1&gt;My Web Portal&lt;/h1&gt;&lt;/header&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;nav&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to encapsulate a section of links with the explicit purpose of offering navigation.</p>
+        <p><strong class="label-meta">How it works:</strong> Allows screen readers and bots to immediately identify primary shortcuts to jump to other areas or pages.</p>
+        <p><strong class="label-meta">When to use:</strong> In primary menu bars, article content indexes, pagination, or footer menus.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;nav&gt;&lt;p&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="#services"&gt;Services&lt;/a&gt;&lt;/p&gt;&lt;/nav&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;main&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to contain the core, unique, and dominant information of the current file.</p>
+        <p><strong class="label-meta">How it works:</strong> Isolates central content, preventing it from being confused with repetitive global blocks like navigation menus or footers.</p>
+        <p><strong class="label-meta">When to use:</strong> Only once per HTML document.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;main&gt;&lt;h2&gt;Main Page Content&lt;/h2&gt;&lt;/main&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;section&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to delimit a generic, cohesive thematic section within the document.</p>
+        <p><strong class="label-meta">How it works:</strong> Groups conceptually related information, creating chapters or divisions within the page hierarchy.</p>
+        <p><strong class="label-meta">When to use:</strong> To structure sections like "About Us", "Gallery", or "Contact" that include their own heading.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;section&gt;&lt;h2&gt;Our Services&lt;/h2&gt;&lt;p&gt;Details of IT services...&lt;/p&gt;&lt;/section&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;article&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to encapsulate an independent piece of information that makes semantic sense on its own.</p>
+        <p><strong class="label-meta">How it works:</strong> Allows news aggregators or external readers to extract the block without losing context from the rest of the page.</p>
+        <p><strong class="label-meta">When to use:</strong> In blog posts, newspaper news items, user comments, or product cards.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;article&gt;&lt;h2&gt;HTML5 News&lt;/h2&gt;&lt;p&gt;Published on August 10...&lt;/p&gt;&lt;/article&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;aside&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to present secondary or complementary content tangentially related to the main topic.</p>
+        <p><strong class="label-meta">How it works:</strong> Separates supporting information blocks so that the primary reading maintains its logical flow.</p>
+        <p><strong class="label-meta">When to use:</strong> In sidebars, author bio boxes, advertising, or related links.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;aside&gt;&lt;h3&gt;About the Author&lt;/h3&gt;&lt;p&gt;Senior Web Developer with 10 years of experience.&lt;/p&gt;&lt;/aside&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;footer&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to structure the closure or footer of the site or a section.</p>
+        <p><strong class="label-meta">How it works:</strong> Contains institutional data, copyright information, policy links, and legal notices.</p>
+        <p><strong class="label-meta">When to use:</strong> At the end of the entire document or as a closing block within cards and articles.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;footer&gt;&lt;p&gt;&copy; 2026 Digital Company. All rights reserved.&lt;/p&gt;&lt;/footer&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;div&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves as a generic block container without any inherent semantic value.</p>
+        <p><strong class="label-meta">How it works:</strong> Groups multiple elements for the sole purpose of applying visual styling through CSS or programmatic manipulation via JavaScript.</p>
+        <p><strong class="label-meta">When to use:</strong> As a layout resource when no appropriate semantic tag exists for the group.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;div class="card-container"&gt;&lt;p&gt;Inner content...&lt;/p&gt;&lt;/div&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;search&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to delimit the area or form dedicated exclusively to searches and filtering.</p>
+        <p><strong class="label-meta">How it works:</strong> Semantically identifies the search zone for assistive technologies and modern browsers.</p>
+        <p><strong class="label-meta">When to use:</strong> To wrap global search forms or filtering modules within an application.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;search&gt;&lt;form action="/search"&gt;&lt;input type="search" name="q" placeholder="Search..."&gt;&lt;/form&gt;&lt;/search&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 5 -->
+    <section id="block-5" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">05</div>
+
+        <div>
+          <p class="section-kicker">TYPOGRAPHY</p>
+          <h2>Headings and Text Hierarchy</h2>
+          <p class="section-description">
+            Heading elements establish the semantic hierarchy of document
+            content.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;h1&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to declare the primary heading of greatest importance and hierarchy in the document.</p>
+        <p><strong class="label-meta">How it works:</strong> Indicates to the browser and search engines the central and indivisible topic of the web page.</p>
+        <p><strong class="label-meta">When to use:</strong> Once per page as a fundamental descriptive title (although technical HTML5 standards allow multiple <code>&lt;h1&gt;</code> tags if nested within independent sectioning contexts like <code>&lt;article&gt;</code> or <code>&lt;section&gt;</code>).</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;h1&gt;Web Architecture Handbook&lt;/h1&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;h2&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to mark headings for secondary sections or blocks.</p>
+        <p><strong class="label-meta">How it works:</strong> Subordinates content to the hierarchy of the primary <code>&lt;h1&gt;</code> heading, dividing the topic into organized parts.</p>
+        <p><strong class="label-meta">When to use:</strong> To title each thematically distinguishable section within the document.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;h2&gt;1. HTML Fundamentals&lt;/h2&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;h3&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to indicate subsections contained within an <code>&lt;h2&gt;</code> section.</p>
+        <p><strong class="label-meta">How it works:</strong> Creates a third level of semantic breakdown in the text hierarchy.</p>
+        <p><strong class="label-meta">When to use:</strong> To specify specific subtopics within a section.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;h3&gt;1.1 DOM Structure&lt;/h3&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serve to structure deeper levels of hierarchy within complex outlines.</p>
+        <p><strong class="label-meta">How it works:</strong> Organize advanced breakdowns while preserving their respective logical subordination.</p>
+        <p><strong class="label-meta">When to use:</strong> In extensive texts, technical manuals, or scientific documents.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;h4&gt;1.1.1 Global Attributes&lt;/h4&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;hgroup&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to group a main heading with its direct subtitles or taglines.</p>
+        <p><strong class="label-meta">How it works:</strong> Consolidates the title and its secondary elements into a single semantic header unit.</p>
+        <p><strong class="label-meta">When to use:</strong> When a headline is accompanied by a subtitle or slogan without computing as a new level in the table of contents.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;hgroup&gt;&lt;h1&gt;My Business&lt;/h1&gt;&lt;p&gt;Innovation within your reach&lt;/p&gt;&lt;/hgroup&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 6 -->
+    <section id="block-6" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">06</div>
+
+        <div>
+          <p class="section-kicker">TEXT</p>
+          <h2>Paragraphs and Block Text Formatting</h2>
+          <p class="section-description">
+            Elements for organizing paragraphs, breaks, quotations, and
+            preformatted text.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;p&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to delimit continuous blocks of text or paragraphs.</p>
+        <p><strong class="label-meta">How it works:</strong> Models text by separating it visually using automatic top and bottom margins.</p>
+        <p><strong class="label-meta">When to use:</strong> To write any explanatory text or standard reading material.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;This is a paragraph with explanatory information on the subject.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;br&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to produce an immediate line break in text without creating a new paragraph.</p>
+        <p><strong class="label-meta">How it works:</strong> Interrupts the flow of the current line and shifts subsequent text to the next line.</p>
+        <p><strong class="label-meta">When to use:</strong> In poetry verses, song lyrics, or postal addresses.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>Main Street #12&lt;br&gt;Madrid, Spain</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;hr&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to represent a thematic break or shift within the text.</p>
+        <p><strong class="label-meta">How it works:</strong> Draws a horizontal separating line by default, creating a change of context.</p>
+        <p><strong class="label-meta">When to use:</strong> Between book chapters or abrupt transitions in topic.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;hr&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;blockquote&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to frame an extensive textual quotation from an external source.</p>
+        <p><strong class="label-meta">How it works:</strong> Isolates text by applying block indentation and allowing the source to be cited using the <code>cite</code> attribute.</p>
+        <p><strong class="label-meta">When to use:</strong> When including full quotes from books, articles, or speeches.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;blockquote cite="https://source.com"&gt;&lt;p&gt;Simplicity is the key to true elegance.&lt;/p&gt;&lt;/blockquote&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;pre&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves to present preformatted text exactly as written.</p>
+        <p><strong class="label-meta">How it works:</strong> Preserves all whitespace, tabs, and line breaks using a monospace font.</p>
+        <p><strong class="label-meta">When to use:</strong> To display source code blocks, text diagrams, or ASCII art.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;pre&gt;Function Start() { Console.Write("Ok"); }&lt;/pre&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 7 -->
+    <section id="block-7" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">07</div>
+
+        <div>
+          <p class="section-kicker">INLINE</p>
+          <h2>Inline Text Formatting and Emphasis</h2>
+          <p class="section-description">
+            Inline elements for emphasis, highlighting, annotations, and
+            specialized text presentation.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;span&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Generic inline container without direct semantic meaning.</p>
+        <p><strong class="label-meta">How it works:</strong> Encapsulates text selections without interrupting the inline flow to apply styles or manipulate them.</p>
+        <p><strong class="label-meta">When to use:</strong> To customize the visual style of specific words or fragments.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;The order status is &lt;span style="color: green;"&gt;Approved&lt;/span&gt;.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;strong&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Assigns high importance or urgency to a fragment of text.</p>
+        <p><strong class="label-meta">How it works:</strong> Grants high semantic weight for screen readers and renders in bold.</p>
+        <p><strong class="label-meta">When to use:</strong> In warnings, essential terms, and crucial notices.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; Save your changes before leaving.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;em&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Applies stress emphasis or intonation change to text.</p>
+        <p><strong class="label-meta">How it works:</strong> Alters pronunciation in assisted reading and renders in italics.</p>
+        <p><strong class="label-meta">When to use:</strong> To highlight words that carry the core intent of a sentence.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;You must send the report &lt;em&gt;today&lt;/em&gt; without fail.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;b&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Visually highlights text without adding extra semantic importance.</p>
+        <p><strong class="label-meta">How it works:</strong> Applies bold styling without altering tone or relevance for accessible assistance.</p>
+        <p><strong class="label-meta">When to use:</strong> Key terms in summaries, product names, or search terms.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;The term &lt;b&gt;HTML&lt;/b&gt; stands for a markup language.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;i&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Represents text in an alternate tone or voice.</p>
+        <p><strong class="label-meta">How it works:</strong> Displays in italics without implying stress emphasis.</p>
+        <p><strong class="label-meta">When to use:</strong> For Latin phrases, technical terms, scientific names, or thoughts.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;The term &lt;i&gt;Status quo&lt;/i&gt; is frequently used.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;u&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Marks text with a non-textual visual underline.</p>
+        <p><strong class="label-meta">How it works:</strong> Applies a line beneath text without signifying a hyperlink.</p>
+        <p><strong class="label-meta">When to use:</strong> For spelling annotations or proper nouns in transcripts.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;The word &lt;u&gt;receive&lt;/u&gt; is spelled with 'ei'.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;del&gt; and &lt;s&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Represent content that has been removed or is no longer accurate.</p>
+        <p><strong class="label-meta">How it works:</strong> Display a strikethrough line over the text; <code>&lt;del&gt;</code> denotes formal document editing.</p>
+        <p><strong class="label-meta">When to use:</strong> In document revisions or price breakdowns in sale offers.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;Price: &lt;del&gt;$100 USD&lt;/del&gt; $80 USD&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;ins&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Indicates a recent addition or insertion of text in a document.</p>
+        <p><strong class="label-meta">How it works:</strong> Underlines text to formally indicate its incorporation into the current version.</p>
+        <p><strong class="label-meta">When to use:</strong> In track changes for contracts, regulations, or articles.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;Our main headquarters is in &lt;ins&gt;Madrid&lt;/ins&gt;.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;mark&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Highlights text due to its circumstantial or contextual relevance.</p>
+        <p><strong class="label-meta">How it works:</strong> Applies a background highlight (yellow by default) to simulate a highlighter pen.</p>
+        <p><strong class="label-meta">When to use:</strong> To highlight search matches within a page.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;Results for 'web': advanced &lt;mark&gt;web&lt;/mark&gt; development.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;small&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Represents side comments, disclaimers, or legal fine print.</p>
+        <p><strong class="label-meta">How it works:</strong> Reduces text size to signal lower information weight.</p>
+        <p><strong class="label-meta">When to use:</strong> In copyright notices, terms of use, and explanatory notes.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;small&gt;Applies only to new users. Terms and conditions subject to change.&lt;/small&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;sub&gt; and &lt;sup&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Position text as subscript or superscript.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>&lt;sub&gt;</code> lowers and shrinks text; <code>&lt;sup&gt;</code> raises and shrinks text.</p>
+        <p><strong class="label-meta">When to use:</strong> In chemical formulas (H2O), mathematical equations (X2), or footnotes.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;Formula: H&lt;sub&gt;2&lt;/sub&gt;O | Equation: X&lt;sup&gt;2&lt;/sup&gt; + Y&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 8 -->
+    <section id="block-8" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">08</div>
+
+        <div>
+          <p class="section-kicker">SEMANTICS</p>
+          <h2>Specialized Text Semantics</h2>
+          <p class="section-description">
+            Elements that communicate specialized meaning such as code,
+            definitions, citations, dates, and text direction.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;code&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Represents computer code snippets or commands.</p>
+        <p><strong class="label-meta">How it works:</strong> Applies a monospace font to distinguish code instructions from body text.</p>
+        <p><strong class="label-meta">When to use:</strong> To reference functions, variables, or code lines in guides.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;Use the &lt;code&gt;fetch()&lt;/code&gt; function to retrieve data.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;kbd&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Denotes physical keyboard inputs or voice commands entered by the user.</p>
+        <p><strong class="label-meta">How it works:</strong> Formats text in monospace layout emulating key caps.</p>
+        <p><strong class="label-meta">When to use:</strong> In tutorials instructing keyboard shortcuts.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;Press &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt; to copy.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;samp&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Represents sample output or response from a system or software.</p>
+        <p><strong class="label-meta">How it works:</strong> Displays text in a terminal font indicating results emitted by an application.</p>
+        <p><strong class="label-meta">When to use:</strong> To show console messages or software errors.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;System responded: &lt;samp&gt;500 Internal Server Error&lt;/samp&gt;&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;var&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Defines a mathematical or programming variable within text.</p>
+        <p><strong class="label-meta">How it works:</strong> Renders letters in italics to distinguish them as dynamic or unknown values.</p>
+        <p><strong class="label-meta">When to use:</strong> In explanations of algorithms and mathematical equations.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;If &lt;var&gt;x&lt;/var&gt; equals 10, determine the result.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;abbr&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Defines abbreviations, acronyms, or initialisms.</p>
+        <p><strong class="label-meta">How it works:</strong> Allows providing an expanded definition via the <code>title</code> attribute, visible on hover or via assisted reading.</p>
+        <p><strong class="label-meta">When to use:</strong> The first time a specialized acronym appears in text.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;We study the &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; standard.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;dfn&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Marks the exact term being formally defined within a sentence.</p>
+        <p><strong class="label-meta">How it works:</strong> Indicates to analytical engines the specific keyword being explained.</p>
+        <p><strong class="label-meta">When to use:</strong> In glossaries and technical manuals the first time a concept is defined.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;An &lt;dfn&gt;algorithm&lt;/dfn&gt; is a finite sequence of logical instructions.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;cite&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> References the formal title of a creative or intellectual work.</p>
+        <p><strong class="label-meta">How it works:</strong> Displays text in italics, identifying it semantically as an artistic or scientific work.</p>
+        <p><strong class="label-meta">When to use:</strong> When citing books, paintings, songs, movies, or research papers.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;More information in the book &lt;cite&gt;Don Quixote&lt;/cite&gt;.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;q&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Inserts a short inline textual quote.</p>
+        <p><strong class="label-meta">How it works:</strong> Automatically encloses content in quotation marks matching the document language.</p>
+        <p><strong class="label-meta">When to use:</strong> For short quotes integrated naturally into a paragraph.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;The teacher said: &lt;q&gt;Practice makes perfect&lt;/q&gt;.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;time&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Represents machine-readable dates, times, or durations.</p>
+        <p><strong class="label-meta">How it works:</strong> Binds visual text with an ISO 8601 standardized date using the <code>datetime</code> attribute.</p>
+        <p><strong class="label-meta">When to use:</strong> In event dates, notices, comments, or publications.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;Published on &lt;time datetime="2026-08-10"&gt;August 10, 2026&lt;/time&gt;.&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;address&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Groups direct contact information for the document author or owner.</p>
+        <p><strong class="label-meta">How it works:</strong> Formats physical addresses, emails, and phone numbers in an identifiable layout.</p>
+        <p><strong class="label-meta">When to use:</strong> In the main page footer or fixed contact sections.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;address&gt;Contact: &lt;a href="mailto:info@company.com"&gt;info@company.com&lt;/a&gt;&lt;/address&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;bdi&gt; and &lt;bdo&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Isolate or override default text reading direction.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>&lt;bdi&gt;</code> isolates text of unknown direction; <code>&lt;bdo&gt;</code> forces direction via <code>dir="rtl"</code> or <code>ltr</code>.</p>
+        <p><strong class="label-meta">When to use:</strong> When embedding international text read right-to-left (e.g., Arabic, Hebrew) alongside Western text.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;p&gt;Reversed text: &lt;bdo dir="rtl"&gt;This text will read backwards&lt;/bdo&gt;&lt;/p&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;ruby&gt;, &lt;rt&gt;, &lt;rp&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Display small pronunciation annotations above Asian language characters.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>&lt;ruby&gt;</code> delimits the expression, <code>&lt;rt&gt;</code> adds top pronunciation guides, and <code>&lt;rp&gt;</code> provides fallback parentheses for older browsers.</p>
+        <p><strong class="label-meta">When to use:</strong> To guide character reading in Asian languages (such as Japanese Kanji or Chinese Hanzi).</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;ruby&gt;漢 &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;かん&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;wbr&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Suggests a safe line break point within very long words.</p>
+        <p><strong class="label-meta">How it works:</strong> Indicates to the browser exactly where it may break character strings if the display becomes narrow.</p>
+        <p><strong class="label-meta">When to use:</strong> In long URLs or compound terms lacking spaces.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>https://site.com/section/article&lt;wbr&gt;SuperLongWithDetails.html</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 9 -->
+    <section id="block-9" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">09</div>
+
+        <div>
+          <p class="section-kicker">NAVIGATION</p>
+          <h2>Links and Hyperlinks</h2>
+          <p class="section-description">
+            Different ways to navigate between documents, resources, sections,
+            and actions.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;a&gt; (External Link)</h3>
+        <p><strong class="label-meta">Function:</strong> Connects and redirects navigation to an external website outside your own domain.</p>
+        <p><strong class="label-meta">How it works:</strong> Requests a new resource over the open network via HTTP/HTTPS protocols.</p>
+        <p><strong class="label-meta">When to use:</strong> To cite external sources or direct users to third-party domains.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;a href="https://www.w3.org" target="_blank" rel="noopener"&gt;Visit W3C&lt;/a&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;a&gt; (Internal Link)</h3>
+        <p><strong class="label-meta">Function:</strong> Navigates between different sections or documents within the same website.</p>
+        <p><strong class="label-meta">How it works:</strong> Loads local or relative file paths without leaving the primary server.</p>
+        <p><strong class="label-meta">When to use:</strong> In navigation menus, inter-page buttons, and indexes.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;a href="/contact.html"&gt;Go to Contact&lt;/a&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;a&gt; (Internal Anchor)</h3>
+        <p><strong class="label-meta">Function:</strong> Scrolls page display directly to a specific section or point in the current document.</p>
+        <p><strong class="label-meta">How it works:</strong> Locates an element whose <code>id</code> attribute matches the value following the <code>#</code> symbol and positions the screen over it.</p>
+        <p><strong class="label-meta">When to use:</strong> In tables of contents at the beginning of long articles or "Back to Top" buttons.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;a href="#faq-section"&gt;See FAQ&lt;/a&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;a&gt; (mailto / tel Action)</h3>
+        <p><strong class="label-meta">Function:</strong> Triggers direct operating system tools such as email clients or telephone dialers.</p>
+        <p><strong class="label-meta">How it works:</strong> Invokes the default device application, passing the address or phone number to initiate interaction.</p>
+        <p><strong class="label-meta">When to use:</strong> Direct support links, helpline numbers, or emails.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;a href="mailto:support@web.com"&gt;Send Email&lt;/a&gt; | &lt;a href="tel:+34900112233"&gt;Call Toll-Free&lt;/a&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;a&gt; (Download - download attribute)</h3>
+        <p><strong class="label-meta">Function:</strong> Forces the browser to download the linked file instead of navigating to it.</p>
+        <p><strong class="label-meta">How it works:</strong> The presence of the <code>download</code> attribute instructs the navigation engine to trigger a local disk transfer.</p>
+        <p><strong class="label-meta">When to use:</strong> For links pointing to PDFs, ZIP files, APKs, or downloadable assets.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;a href="/files/manual.pdf" download="User-Guide.pdf"&gt;Download Manual&lt;/a&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;a&gt; (rel and target attributes)</h3>
+        <p><strong class="label-meta">Function:</strong> Define window opening destination (<code>target</code>) and security/trust relation (<code>rel</code>).</p>
+        <p><strong class="label-meta">How it works:</strong> <code>target="_blank"</code> opens resources in a new tab. Values <code>rel="noopener noreferrer"</code> secure execution threads to prevent security vulnerabilities (tabnabbing).</p>
+        <p><strong class="label-meta">When to use:</strong> On all external links pointing away from your website.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;a href="https://example.com" target="_blank" rel="noopener noreferrer"&gt;Secure Link&lt;/a&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 10 -->
+    <section id="block-10" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">10</div>
+
+        <div>
+          <p class="section-kicker">MEDIA</p>
+          <h2>Multimedia and Images</h2>
+          <p class="section-description">
+            Images, responsive media sources, audio, video, and captions.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;img&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Inserts a graphic image directly into the document flow.</p>
+        <p><strong class="label-meta">How it works:</strong> Downloads the image file via the <code>src</code> attribute and renders it preserving specified proportions, requiring mandatory text descriptions via <code>alt</code>.</p>
+        <p><strong class="label-meta">When to use:</strong> To include illustrations, diagrams, photos, or logos.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;img src="landscape.jpg" alt="Snowy mountain at sunrise" width="800" height="600"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;picture&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Provides adaptive image alternatives based on screen capabilities or format support.</p>
+        <p><strong class="label-meta">How it works:</strong> Evaluates media rules (media queries) inside child <code>&lt;source&gt;</code> elements to download only the most efficient image according to device resolution or support.</p>
+        <p><strong class="label-meta">When to use:</strong> To serve modern compressed formats (like AVIF or WebP) with JPG/PNG fallbacks, or adapt images to screen sizes.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;picture&gt;&lt;source srcset="photo.avif" type="image/avif"&gt;&lt;source srcset="photo.webp" type="image/webp"&gt;&lt;img src="photo.jpg" alt="Image description"&gt;&lt;/picture&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;source&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Specifies alternative media resources for <code>&lt;picture&gt;</code>, <code>&lt;video&gt;</code>, and <code>&lt;audio&gt;</code> elements.</p>
+        <p><strong class="label-meta">How it works:</strong> The browser evaluates <code>srcset</code>, <code>media</code>, or <code>type</code> attributes on each <code>&lt;source&gt;</code> tag sequentially, choosing the first compatible resource.</p>
+        <p><strong class="label-meta">When to use:</strong> Inside multimedia containers to offer varying resolutions or audio/video codecs.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;source srcset="large-image.jpg" media="(min-width: 800px)"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;video&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Embeds video content directly into the document with support for interactive media controls and native playback.</p>
+        <p><strong class="label-meta">How it works:</strong> The browser renders a native video player, allowing video sources specified via the <code>src</code> attribute or nested <code>&lt;source&gt;</code> tags to load and play directly on the page.</p>
+        <p><strong class="label-meta">When to use:</strong> To display promotional clips, product demonstrations, background videos, or local video tutorials directly in the browser.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;video controls width="640" poster="thumbnail.jpg"&gt;&lt;source src="video.mp4" type="video/mp4"&gt;Your browser does not support the video tag.&lt;/video&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;audio&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Embeds sound or audio files directly into the web page without requiring external plugins.</p>
+        <p><strong class="label-meta">How it works:</strong> Loads audio tracks specified through its <code>src</code> attribute or child <code>&lt;source&gt;</code> elements and provides built-in playback controls (play, pause, volume) when the <code>controls</code> attribute is enabled.</p>
+        <p><strong class="label-meta">When to use:</strong> To integrate podcast episodes, background music, audio interviews, or sound effects into your web application.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;audio controls&gt;&lt;source src="audio.mp3" type="audio/mpeg"&gt;Your browser does not support the audio element.&lt;/audio&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;figure&gt; and &lt;figcaption&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Encapsulate self-contained illustrative content alongside its explanatory caption.</p>
+        <p><strong class="label-meta">How it works:</strong> Semantically connects images, diagrams, or code snippets with the explanatory note written inside <code>&lt;figcaption&gt;</code>.</p>
+        <p><strong class="label-meta">When to use:</strong> For schematics, article photos, data charts, or cited code blocks.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;figure&gt;&lt;img src="chart.png" alt="2026 Sales Chart"&gt;&lt;figcaption&gt;Figure 1: Bi-annual company growth.&lt;/figcaption&gt;&lt;/figure&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 11 -->
+    <section id="block-11" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">11</div>
+
+        <div>
+          <p class="section-kicker">DATA</p>
+          <h2>Lists and Data Structures</h2>
+          <p class="section-description">
+            Ordered, unordered, and descriptive list structures.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;ul&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Creates an unordered list of items without explicit numerical sequence.</p>
+        <p><strong class="label-meta">How it works:</strong> Groups <code>&lt;li&gt;</code> nodes, applying bullet points or graphic symbols to their left by default.</p>
+        <p><strong class="label-meta">When to use:</strong> For lists where factor sequence or order does not alter meaning (e.g., ingredients, features).</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;ul&gt;&lt;li&gt;Apples&lt;/li&gt;&lt;li&gt;Oranges&lt;/li&gt;&lt;/ul&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;ol&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Structures a list where sequential or chronological order is fundamental.</p>
+        <p><strong class="label-meta">How it works:</strong> Automatically numbers each child <code>&lt;li&gt;</code> element using numbers, letters, or Roman numerals.</p>
+        <p><strong class="label-meta">When to use:</strong> In recipes, ordered step-by-step tutorials, or rankings.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;ol&gt;&lt;li&gt;Step 1: Turn on laptop.&lt;/li&gt;&lt;li&gt;Step 2: Open browser.&lt;/li&gt;&lt;/ol&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;li&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Defines individual items contained within a list.</p>
+        <p><strong class="label-meta">How it works:</strong> Must be nested inside a list container (<code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>) to structure information units properly.</p>
+        <p><strong class="label-meta">When to use:</strong> For every indivisible entry in a list.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;li&gt;List item&lt;/li&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Form a description list consisting of terms and descriptions.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>&lt;dl&gt;</code> acts as the main container, <code>&lt;dt&gt;</code> identifies the key term, and <code>&lt;dd&gt;</code> contains the associated definition.</p>
+        <p><strong class="label-meta">When to use:</strong> In glossaries, FAQ sections, or metadata spec sheets.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;dl&gt;&lt;dt&gt;HTML&lt;/dt&gt;&lt;dd&gt;Markup language for creating web pages.&lt;/dd&gt;&lt;/dl&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 12 -->
+    <section id="block-12" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">12</div>
+
+        <div>
+          <p class="section-kicker">DATA</p>
+          <h2>Data Tables</h2>
+          <p class="section-description">
+            Semantic elements for representing structured tabular data.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;table&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Defines a grid matrix structure to present data in rows and columns.</p>
+        <p><strong class="label-meta">How it works:</strong> Organizes data into child nodes (<code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code>), ensuring accessible reading of complex relationships.</p>
+        <p><strong class="label-meta">When to use:</strong> Exclusively for representing two-dimensional tabular data (schedules, financial statements, metrics).</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;table&gt;...&lt;/table&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;caption&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Provides a general title or explanatory description for a data table.</p>
+        <p><strong class="label-meta">How it works:</strong> Positions as the first child node inside <code>&lt;table&gt;</code> and is prioritized by screen readers to contextually inform users.</p>
+        <p><strong class="label-meta">When to use:</strong> On any table requiring an explanatory header or title.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;caption&gt;Table 1: Pricing Plan Comparison&lt;/caption&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Semantically separate the three essential areas of a table: header, main body, and summary footer.</p>
+        <p><strong class="label-meta">How it works:</strong> Organize structural blocks allowing browsers to keep header rows fixed during long vertical scrolling.</p>
+        <p><strong class="label-meta">When to use:</strong> In formal tables to organize structural sectors.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;thead&gt;...&lt;/thead&gt; &lt;tbody&gt;...&lt;/tbody&gt; &lt;tfoot&gt;...&lt;/tfoot&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Build the inner grid framework of a table.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>&lt;tr&gt;</code> defines horizontal rows; <code>&lt;th&gt;</code> contains highlighted header cells; <code>&lt;td&gt;</code> stores data values.</p>
+        <p><strong class="label-meta">When to use:</strong> To populate data intersections across rows and columns.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;td&gt;John Doe&lt;/td&gt;&lt;/tr&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;colgroup&gt; and &lt;col&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Define structural styles and properties for full columns within a table.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>&lt;colgroup&gt;</code> groups one or more <code>&lt;col&gt;</code> tags, enabling global application of classes or widths without repeating attributes across cells.</p>
+        <p><strong class="label-meta">When to use:</strong> To style or format specific table columns centrally.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;colgroup&gt;&lt;col class="highlighted-col"&gt;&lt;col span="2"&gt;&lt;/colgroup&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 13 -->
+    <section id="block-13" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">13</div>
+
+        <div>
+          <p class="section-kicker">INPUT</p>
+          <h2>Forms and Data Capture</h2>
+          <p class="section-description">
+            Interactive controls for collecting, validating, and submitting
+            user information.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;form&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Delimits a section of interactive controls to capture user input for processing or transmission.</p>
+        <p><strong class="label-meta">How it works:</strong> Gathers input values and, upon submit execution, issues HTTP requests (GET/POST) to the URL defined in the <code>action</code> attribute.</p>
+        <p><strong class="label-meta">When to use:</strong> In contact forms, login portals, registrations, and filters.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;form action="/process-data" method="POST"&gt;...&lt;/form&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;input&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Represents the fundamental multi-purpose data capture field.</p>
+        <p><strong class="label-meta">How it works:</strong> Alters its behavior, validation rules, and appearance based on its <code>type</code> attribute (text, password, email, checkbox, radio, file, etc.).</p>
+        <p><strong class="label-meta">When to use:</strong> To capture short responses, credentials, single selections, or file uploads.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;input type="email" name="email" placeholder="example@web.com" required&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;label&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Provides an explanatory descriptive label to a form control.</p>
+        <p><strong class="label-meta">How it works:</strong> Binds text labels to target input fields using the <code>for</code> attribute matching the input <code>id</code>, expanding accessible click areas.</p>
+        <p><strong class="label-meta">When to use:</strong> On all form controls without exception per accessibility standards.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;label for="full-name"&gt;Full Name:&lt;/label&gt; &lt;input type="text" id="full-name" name="name"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;textarea&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Offers a multi-line input field for entering long text.</p>
+        <p><strong class="label-meta">How it works:</strong> Allows users to write several lines of text with manual line breaks, adjustable via <code>rows</code> and <code>cols</code> attributes.</p>
+        <p><strong class="label-meta">When to use:</strong> For comment sections, feedback forms, messaging, or descriptions.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;textarea name="comment" rows="4" placeholder="Type your message..."&gt;&lt;/textarea&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;select&gt;, &lt;option&gt;, &lt;optgroup&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Allow constructing drop-down selection menus.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>&lt;select&gt;</code> wraps the drop-down, <code>&lt;option&gt;</code> defines selectable values, and <code>&lt;optgroup&gt;</code> categorizes related options.</p>
+        <p><strong class="label-meta">When to use:</strong> To select countries, categories, or predefined values, reducing entry errors.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;select name="country"&gt;&lt;optgroup label="Americas"&gt;&lt;option value="cr"&gt;Costa Rica&lt;/option&gt;&lt;option value="mx"&gt;Mexico&lt;/option&gt;&lt;/optgroup&gt;&lt;/select&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;button&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Represents an executable interactive button within the interface.</p>
+        <p><strong class="label-meta">How it works:</strong> Triggers form submissions (<code>type="submit"</code>), resets inputs (<code>type="reset"</code>), or invokes custom JavaScript functions (<code>type="button"</code>).</p>
+        <p><strong class="label-meta">When to use:</strong> For confirmations, dynamic actions, or form submissions.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;button type="submit"&gt;Submit Form&lt;/button&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 14 -->
+    <section id="block-14" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">14</div>
+
+        <div>
+          <p class="section-kicker">EMBEDDING</p>
+          <h2>Advanced Multimedia and Content Insertion</h2>
+          <p class="section-description">
+            Elements for embedding video, audio, documents, external browsing
+            contexts, and programmable graphics.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;video&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Natively embeds video playback in the browser without requiring external plugins.</p>
+        <p><strong class="label-meta">How it works:</strong> Uses internal browser decoders to process video files (MP4, WebM), with options to enable integrated controls (<code>controls</code>), autoplay, or loops.</p>
+        <p><strong class="label-meta">When to use:</strong> To display tutorials, demonstrations, or animated backgrounds.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;video src="video.mp4" controls width="640" height="360"&gt;Your browser does not support the video tag.&lt;/video&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;audio&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Embeds sound tracks, music, or audio streams directly into the document.</p>
+        <p><strong class="label-meta">How it works:</strong> Processes auditory files (MP3, WAV, OGG) through a native control interface rendered on the page.</p>
+        <p><strong class="label-meta">When to use:</strong> For podcasts, music tracks, or audio effects.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;audio src="podcast.mp3" controls&gt;Your browser does not support audio elements.&lt;/audio&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;iframe&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Inserts a nested browsing context loading another HTML document inside the current page.</p>
+        <p><strong class="label-meta">How it works:</strong> Creates an isolated independent window downloading and running an external URL inside fixed dimensions.</p>
+        <p><strong class="label-meta">When to use:</strong> To integrate interactive maps (Google Maps), external videos (YouTube), or third-party widgets.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;iframe src="https://maps.google.com/" width="600" height="450" loading="lazy"&gt;&lt;/iframe&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;embed&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Acts as an integration point for external non-native applications or interactive content.</p>
+        <p><strong class="label-meta">How it works:</strong> Calls browser plugins or external handlers to render interactive content like PDF documents or specific apps.</p>
+        <p><strong class="label-meta">When to use:</strong> To embed external interactive files when <code>&lt;iframe&gt;</code> or <code>&lt;object&gt;</code> are unsuitable.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;embed type="application/pdf" src="document.pdf" width="500" height="300"&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;object&gt; and &lt;param&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Allows embedding generic external multimedia resources while accepting initialization parameters.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>&lt;object&gt;</code> loads resources based on MIME type and URL; nested <code>&lt;param&gt;</code> tags pass configuration variables to the loaded resource.</p>
+        <p><strong class="label-meta">When to use:</strong> To embed complex media or widgets requiring setup arguments.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;object data="media.swf" type="application/x-shockwave-flash"&gt;&lt;param name="autoplay" value="true"&gt;&lt;/object&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;canvas&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Provides a real-time programmable bitmap drawing canvas.</p>
+        <p><strong class="label-meta">How it works:</strong> Exposes a blank graphic area where JavaScript draws 2D shapes or 3D animations (WebGL) rendered pixel by pixel.</p>
+        <p><strong class="label-meta">When to use:</strong> In browser-based 2D/3D games, dynamic data charts, or web image editors.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;canvas id="gameCanvas" width="800" height="400"&gt;&lt;/canvas&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 15 -->
+    <section id="block-15" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">15</div>
+
+        <div>
+          <p class="section-kicker">INTERACTION</p>
+          <h2>Interactivity and Dynamic Web Components</h2>
+          <p class="section-description">
+            Native HTML elements for disclosure widgets, dialogs, templates,
+            and reusable component structures.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;details&gt; and &lt;summary&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Natively create collapsible disclosure widgets to show or hide information without requiring JavaScript.</p>
+        <p><strong class="label-meta">How it works:</strong> Users click on <code>&lt;summary&gt;</code> (acting as the header), and the browser toggles visibility of the nested content inside <code>&lt;details&gt;</code>.</p>
+        <p><strong class="label-meta">When to use:</strong> In accordion sections, FAQ boxes, or secondary information blocks.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;details&gt;&lt;summary&gt;What payment methods are accepted?&lt;/summary&gt;&lt;p&gt;We accept credit cards, debit, and bank transfers.&lt;/p&gt;&lt;/details&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;dialog&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Represents a native modal window or popup dialog box.</p>
+        <p><strong class="label-meta">How it works:</strong> Controlled via native JavaScript functions (<code>showModal()</code>, <code>close()</code>), managing visual overlays and backdrop page locking.</p>
+        <p><strong class="label-meta">When to use:</strong> For modal confirmation boxes, custom alerts, or floating forms.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;dialog id="noticeModal"&gt;&lt;p&gt;Are you sure you want to delete this record?&lt;/p&gt;&lt;button onclick="document.getElementById('noticeModal').close()"&gt;Cancel&lt;/button&gt;&lt;/dialog&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>&lt;template&gt; and &lt;slot&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Allow storing HTML markup fragments that are not rendered on page load, serving as reusable templates.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>&lt;template&gt;</code> keeps fragments inert in memory until JavaScript clones and inserts them into the DOM. <code>&lt;slot&gt;</code> acts as a placeholder to inject content into Web Components.</p>
+        <p><strong class="label-meta">When to use:</strong> For dynamic creation of product cards, table rows, or Web Component development using Shadow DOM.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;template id="card-item"&gt;&lt;div class="card"&gt;&lt;slot name="title"&gt;Default Title&lt;/slot&gt;&lt;/div&gt;&lt;/template&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 16 -->
+    <section id="block-16" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">16</div>
+
+        <div>
+          <p class="section-kicker">ACCESSIBILITY</p>
+          <h2>Web Accessibility and Narrative Regions</h2>
+          <p class="section-description">
+            Accessibility semantics that communicate roles, states, and
+            additional meaning to assistive technologies.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>aria-* Attributes (e.g., aria-label, aria-hidden)</h3>
+        <p><strong class="label-meta">Function:</strong> Provide additional accessibility metadata to convey state, properties, and roles of elements to assistive technologies.</p>
+        <p><strong class="label-meta">How it works:</strong> Modify the accessibility tree exposed by the browser; for example, <code>aria-label</code> sets a direct text label, while <code>aria-hidden="true"</code> hides elements from screen readers.</p>
+        <p><strong class="label-meta">When to use:</strong> When native HTML structures do not fully convey the interactive or visual behavior of a component.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;button aria-label="Close window"&gt;X&lt;/button&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>role Attributes (e.g., role="navigation", role="alert")</h3>
+        <p><strong class="label-meta">Function:</strong> Explicitly define an element's purpose or function within the accessibility tree.</p>
+        <p><strong class="label-meta">How it works:</strong> Inform assistive reading tools about component types (e.g., an alert panel or navigable bar), overriding or reinforcing default semantic roles.</p>
+        <p><strong class="label-meta">When to use:</strong> When building custom complex components using non-semantic elements like <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code>.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;div role="alert"&gt;An error occurred while processing payment.&lt;/div&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 17 -->
+    <section id="block-17" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">17</div>
+
+        <div>
+          <p class="section-kicker">GRAPHICS</p>
+          <h2>Integrated Vector Graphics (SVG)</h2>
+          <p class="section-description">
+            Native vector graphics that can be embedded and controlled through
+            HTML and SVG markup.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;svg&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Serves as the root container defining scalable vector graphics drawn via code.</p>
+        <p><strong class="label-meta">How it works:</strong> Declares a 2D coordinate system where the browser renders resolution-independent geometric shapes, lines, and paths.</p>
+        <p><strong class="label-meta">When to use:</strong> For logos, icons, interactive illustrations, or vector schematics.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;svg width="100" height="100"&gt;...&lt;/svg&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>SVG Basic Shapes (&lt;circle&gt;, &lt;rect&gt;, &lt;path&gt;, &lt;line&gt;)</h3>
+        <p><strong class="label-meta">Function:</strong> Draw specific geometric shapes and vector paths inside an SVG canvas.</p>
+        <p><strong class="label-meta">How it works:</strong> The browser processes coordinates and mathematical parameters assigned in attributes like <code>cx</code>, <code>cy</code>, <code>r</code>, <code>x</code>, <code>y</code>, <code>d</code> to draw lines, rectangles, circles, or complex paths.</p>
+        <p><strong class="label-meta">When to use:</strong> To build custom graphics, icons, and illustrations directly in code.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;svg width="100" height="100"&gt;&lt;circle cx="50" cy="50" r="40" fill="red" /&gt;&lt;/svg&gt;</pre>
+      </article>
+
+    </section>
+
+
+    <!-- BLOCK 18 -->
+    <section id="block-18" class="guide-section">
+
+      <div class="section-heading">
+        <div class="section-number">18</div>
+
+        <div>
+          <p class="section-kicker">MATH</p>
+          <h2>Mathematical Markup Language (MathML)</h2>
+          <p class="section-description">
+            Native markup for representing structured mathematical notation.
+          </p>
+        </div>
+      </div>
+
+
+      <article>
+        <h3>&lt;math&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Represents the root container for native inclusion of complex mathematical notation and expressions.</p>
+        <p><strong class="label-meta">How it works:</strong> The browser engine interprets the hierarchical element structure of MathML to format typography for equations, fractions, and radicals.</p>
+        <p><strong class="label-meta">When to use:</strong> In scientific, educational, or mathematical documents needing accurately formatted formulas.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;math&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/math&gt;</pre>
+      </article>
+
+
+      <article>
+        <h3>MathML Notation Components (&lt;mrow&gt;, &lt;mfrac&gt;, &lt;msqrt&gt;, &lt;msup&gt;)</h3>
+        <p><strong class="label-meta">Function:</strong> Structure and format advanced mathematical expression blocks.</p>
+        <p><strong class="label-meta">How it works:</strong> Organize terms hierarchically; <code>&lt;mrow&gt;</code> groups rows, <code>&lt;mfrac&gt;</code> creates fractions, <code>&lt;msqrt&gt;</code> applies square roots, and <code>&lt;msup&gt;</code> places exponents or superscripts.</p>
+        <p><strong class="label-meta">When to use:</strong> To compose readable, accessible algebraic formulas, fractions, and powers.</p>
+        <p class="syntax-line"><strong class="label-syntax">Syntax:</strong></p>
+        <pre>&lt;math&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mfrac&gt;&lt;/math&gt;</pre>
+      </article>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="site-footer">
+    <p>
+      Web Dev Guide
+      <span aria-hidden="true">·</span>
+      HTML5 Reference
+    </p>
+  </footer>
+
+
+  <!-- =====================================================
+       BACK TO TOP
+       ===================================================== -->
+
+  <button
+    id="btn-back-to-top"
+    class="btn-back-to-top"
+    aria-label="Back to top"
+    type="button"
+  >
+    ↑
+  </button>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script>
+    const searchInput = document.getElementById("search-input");
+    const articles = document.querySelectorAll("main article");
+
+    function clearSearchHighlight() {
+      articles.forEach((article) => {
+        article.classList.remove("search-hit");
+      });
+    }
+
+    function scrollToMatch() {
+      const filter = searchInput.value.toLowerCase().trim();
+
+      clearSearchHighlight();
+
+      if (!filter) {
+        return;
+      }
+
+      for (const article of articles) {
+        const text = article.textContent.toLowerCase();
+
+        if (text.includes(filter)) {
+          article.classList.add("search-hit");
+
+          article.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
+          setTimeout(() => {
+            article.classList.remove("search-hit");
+          }, 1800);
+
+          break;
+        }
+      }
+    }
+
+    searchInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        scrollToMatch();
+      }
+    });
+
+    searchInput.addEventListener("change", scrollToMatch);
+
+
+    const backToTopBtn =
+      document.getElementById("btn-back-to-top");
+
+    const header =
+      document.querySelector(".tech-header");
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              backToTopBtn.classList.add("visible");
+            } else {
+              backToTopBtn.classList.remove("visible");
+            }
+          });
+        },
+        {
+          threshold: 0
+        }
+      );
+
+    observer.observe(header);
+
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+
+</body>
+</html>

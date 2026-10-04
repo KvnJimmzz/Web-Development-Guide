@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS3 - Web Dev Guide</title>
+  <link rel="stylesheet" href="css.css">
+  <link rel="icon" href="favicon.ico" type="image/png">
+</head>
+<body class="tech-page--css">
+
+  <header class="tech-header">
+    <div class="tech-header-inner">
+      <div class="search-container">
+        <label class="search-label" for="search-input">CSS REFERENCE SEARCH</label>
+        <div class="search-field">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search a concept, selector or rule..."
+          >
+        </div>
+      </div>
+
+      <div class="tech-hero">
+        <div class="tech-badge">CSS3</div>
+
+        <div class="tech-title-row">
+          <div>
+            <p class="tech-kicker">WEB DEV GUIDE</p>
+            <h1>CSS<span>3</span></h1>
+          </div>
+
+          <div class="tech-index">
+            <span>02</span>
+            <small>TECHNOLOGY</small>
+          </div>
+        </div>
+
+        <p class="tech-intro">CSS (Cascading Style Sheets) is the style sheet language used to describe the presentation and visual design of a document structured in HTML. Its primary function is to control the aesthetic aspect of web pages, allowing you to define colors, fonts, spacing, responsive layouts, animations, and visual effects independently from the content structure.</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <div class="toc-inner">
+      <div class="toc-header">
+        <div>
+          <p class="toc-kicker">CONTENTS</p>
+          <h2>CSS Reference</h2>
+        </div>
+        <span class="toc-count">18 BLOCKS</span>
+      </div>
+      <div class="toc-links">
+        <a href="#block-1"><span>01</span>Inclusion Methods and Basic Syntax</a>
+        <a href="#block-2"><span>02</span>Basic Selectors and Combinators</a>
+        <a href="#block-3"><span>03</span>Pseudo-classes and Pseudo-elements</a>
+        <a href="#block-4"><span>04</span>Box Model</a>
+        <a href="#block-5"><span>05</span>Typography and Text Properties</a>
+        <a href="#block-6"><span>06</span>Colors, Backgrounds, and Gradients</a>
+        <a href="#block-7"><span>07</span>Positioning and Document Flow</a>
+        <a href="#block-8"><span>08</span>Flexible Layout (Flexbox)</a>
+        <a href="#block-9"><span>09</span>Grid Layout (CSS Grid)</a>
+        <a href="#block-10"><span>10</span>2D and 3D Transforms</a>
+        <a href="#block-11"><span>11</span>Transitions and Animations (@keyframes)</a>
+        <a href="#block-12"><span>12</span>Media Queries and Responsive Design</a>
+        <a href="#block-13"><span>13</span>CSS Variables (Custom Properties)</a>
+        <a href="#block-14"><span>14</span>Filters and Blend Modes</a>
+        <a href="#block-15"><span>15</span>CSS Math Functions</a>
+        <a href="#block-16"><span>16</span>CSS Logical Properties</a>
+        <a href="#block-17"><span>17</span>Container Queries</a>
+        <a href="#block-18"><span>18</span>Advanced At-Rules (@layer, @supports)</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="guide-content">
+    <section id="block-1" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">01</div>
+        <div>
+          <p class="section-kicker">BASICS</p>
+          <h2>Inclusion Methods and Basic Syntax</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>&lt;link rel="stylesheet"&gt;</h3>
+        <p><strong class="label-meta">Function:</strong> Links an external stylesheet in a separate <code>.css</code> file to the HTML document.</p>
+        <p><strong class="label-meta">How it works:</strong> The browser downloads the CSS file in parallel and applies its rules to the entire document DOM, keeping structure separated from design.</p>
+        <p><strong class="label-meta">When to use:</strong> In any modular, professional web project to facilitate code maintenance and reusability.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>&lt;link rel="stylesheet" href="styles.css"&gt;</pre></p>
+      </article>
+
+      <article>
+        <h3>Internal Styles (&lt;style&gt;)</h3>
+        <p><strong class="label-meta">Function:</strong> Embeds CSS rules directly within the <code>&lt;head&gt;</code> tag of the HTML document.</p>
+        <p><strong class="label-meta">How it works:</strong> The rendering engine processes the rules instantly without issuing additional HTTP requests for external style files.</p>
+        <p><strong class="label-meta">When to use:</strong> For quick prototypes, isolated single pages, or declaring critical CSS needed for the initial view.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>&lt;style&gt; body { background-color: #f0f0f0; } &lt;/style&gt;</pre></p>
+      </article>
+
+      <article>
+        <h3>Inline Styles (style attribute)</h3>
+        <p><strong class="label-meta">Function:</strong> Applies style properties directly onto a specific HTML element.</p>
+        <p><strong class="label-meta">How it works:</strong> Overrides almost any other external CSS rule due to its high direct specificity on the element.</p>
+        <p><strong class="label-meta">When to use:</strong> Strictly for quick testing or dynamic values injected via JavaScript.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>&lt;p style="color: red; font-size: 16px;"&gt;Text&lt;/p&gt;</pre></p>
+      </article>
+
+      <article>
+        <h3>CSS Rule Syntax (Selector + Declaration)</h3>
+        <p><strong class="label-meta">Function:</strong> Basic structure composed of a selector and a declaration block enclosed in curly braces.</p>
+        <p><strong class="label-meta">How it works:</strong> The selector identifies target DOM nodes, and the block assigns specific values to their visual properties.</p>
+        <p><strong class="label-meta">When to use:</strong> Whenever writing any instruction or style within CSS.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>selector { property: value; }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-2" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">02</div>
+        <div>
+          <p class="section-kicker">SELECTORS</p>
+          <h2>Basic Selectors and Combinators</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>Universal Selector (*)</h3>
+        <p><strong class="label-meta">Function:</strong> Selects absolutely every element present in the HTML document.</p>
+        <p><strong class="label-meta">How it works:</strong> Traverses the entire DOM tree, applying the specified properties to each individual node.</p>
+        <p><strong class="label-meta">When to use:</strong> Primarily in global resets for margins, paddings, and the box model (<code>box-sizing</code>).</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>* { box-sizing: border-box; margin: 0; }</pre></p>
+      </article>
+
+      <article>
+        <h3>Type / Tag Selector</h3>
+        <p><strong class="label-meta">Function:</strong> Selects all HTML elements that match a specific tag name.</p>
+        <p><strong class="label-meta">How it works:</strong> Searches for a direct match with document tags and applies styles globally to that element type.</p>
+        <p><strong class="label-meta">When to use:</strong> To define base or default styles for global tags like <code>p</code>, <code>h1</code>, <code>a</code>, or <code>body</code>.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>h1 { color: #333; font-family: sans-serif; }</pre></p>
+      </article>
+
+      <article>
+        <h3>Class Selector (.class)</h3>
+        <p><strong class="label-meta">Function:</strong> Selects all elements containing a <code>class</code> attribute with the specified value.</p>
+        <p><strong class="label-meta">How it works:</strong> Allows grouping different elements under a single reusable design entity.</p>
+        <p><strong class="label-syntax">When to use:</strong> It is the main recommended method for styling components and elements in CSS.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.btn { padding: 10px 20px; border-radius: 5px; }</pre></p>
+      </article>
+
+      <article>
+        <h3>ID Selector (#id)</h3>
+        <p><strong class="label-meta">Function:</strong> Selects a single element whose <code>id</code> attribute matches exactly.</p>
+        <p><strong class="label-meta">How it works:</strong> Since IDs must be unique within the document, it applies styles with significantly high specificity.</p>
+        <p><strong class="label-meta">When to use:</strong> Sparingly; preferably reserved for navigation anchors or scripts.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>#main-header { background-color: #111; }</pre></p>
+      </article>
+
+      <article>
+        <h3>Descendant Combinator (space)</h3>
+        <p><strong class="label-meta">Function:</strong> Selects elements that are inside another parent element, regardless of nesting depth.</p>
+        <p><strong class="label-meta">How it works:</strong> Evaluates hierarchy and applies styles to any matching child, grandchild, or distant descendant.</p>
+        <p><strong class="label-meta">When to use:</strong> To style elements contained within specific sections or containers.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>article p { line-height: 1.6; }</pre></p>
+      </article>
+
+      <article>
+        <h3>Direct Child Combinator (&gt;)</h3>
+        <p><strong class="label-meta">Function:</strong> Selects only elements that are immediate, first-level children of a parent container.</p>
+        <p><strong class="label-meta">How it works:</strong> Ignores descendants nested deeper within other sub-containers.</p>
+        <p><strong class="label-meta">When to use:</strong> To style main lists or strict first-level structures.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>ul &gt; li { list-style: none; }</pre></p>
+      </article>
+
+      <article>
+        <h3>Adjacent Sibling Combinator (+)</h3>
+        <p><strong class="label-meta">Function:</strong> Selects the element placed immediately after another element at the same hierarchy level.</p>
+        <p><strong class="label-meta">How it works:</strong> Verifies that both share the same parent and are positioned directly next to each other.</p>
+        <p><strong class="label-meta">When to use:</strong> To add top margins to paragraphs that directly follow a heading.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>h2 + p { margin-top: 10px; }</pre></p>
+      </article>
+
+      <article>
+        <h3>General Sibling Combinator (~)</h3>
+        <p><strong class="label-meta">Function:</strong> Selects all subsequent siblings that share the same parent element.</p>
+        <p><strong class="label-meta">How it works:</strong> Affects any matching element that follows, not strictly the first adjacent one.</p>
+        <p><strong class="label-meta">When to use:</strong> To alter states of multiple elements after interacting with a preceding control.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>h2 ~ p { color: #555; }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-3" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">03</div>
+        <div>
+          <p class="section-kicker">PSEUDO-ELEMENTS AND CLASSES</p>
+          <h2>Pseudo-classes and Pseudo-elements</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>:hover</h3>
+        <p><strong class="label-meta">Function:</strong> Applies styles when the user hovers over an element with a pointing device.</p>
+        <p><strong class="label-meta">How it works:</strong> Dynamically modifies the visual presentation according to the user interaction state.</p>
+        <p><strong class="label-meta">When to use:</strong> On buttons, links, and interactive cards to provide visual feedback.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>a:hover { text-decoration: underline; color: #007bff; }</pre></p>
+      </article>
+
+      <article>
+        <h3>:focus and :focus-visible</h3>
+        <p><strong class="label-meta">Function:</strong> Styles elements that have received focus via keyboard or direct user interaction.</p>
+        <p><strong class="label-meta">How it works:</strong> Highlights active fields in forms or elements navigated via the Tab key.</p>
+        <p><strong class="label-meta">When to use:</strong> Essential to ensure user interface accessibility.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>input:focus { outline: 2px solid #0056b3; }</pre></p>
+      </article>
+
+      <article>
+        <h3>:nth-child()</h3>
+        <p><strong class="label-meta">Function:</strong> Selects elements based on their position or a mathematical formula within their parent container.</p>
+        <p><strong class="label-meta">How it works:</strong> Accepts numeric indices, keywords (<code>odd</code>, <code>even</code>), or algebraic expressions (<code>2n+1</code>).</p>
+        <p><strong class="label-meta">When to use:</strong> To create striped tables or apply cyclic styles to item lists.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>tr:nth-child(even) { background-color: #f2f2f2; }</pre></p>
+      </article>
+
+      <article>
+        <h3>:not()</h3>
+        <p><strong class="label-meta">Function:</strong> Excludes elements from selection that match the selector passed within its parentheses.</p>
+        <p><strong class="label-meta">How it works:</strong> Filters result sets by omitting elements that satisfy the specified condition.</p>
+        <p><strong class="label-meta">When to use:</strong> To style a set of items while excluding only the first, last, or disabled ones.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>button:not(.btn-disabled) { cursor: pointer; }</pre></p>
+      </article>
+
+      <article>
+        <h3>::before and ::after</h3>
+        <p><strong class="label-meta">Function:</strong> Inserts a decorative pseudo-element before or after the actual content of an element.</p>
+        <p><strong class="label-meta">How it works:</strong> Requires the <code>content</code> property to render a visual element without modifying HTML structure.</p>
+        <p><strong class="label-meta">When to use:</strong> To add icons, graphic decorations, dividers, or complex visual effects.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.title::before { content: "★ "; color: gold; }</pre></p>
+      </article>
+
+      <article>
+        <h3>::placeholder</h3>
+        <p><strong class="label-meta">Function:</strong> Customizes the appearance of placeholder text inside form input fields.</p>
+        <p><strong class="label-meta">How it works:</strong> Directly modifies the font, color, and opacity of the <code>placeholder</code> attribute on <code>input</code> or <code>textarea</code> elements.</p>
+        <p><strong class="label-meta">When to use:</strong> To ensure guide texts have adequate contrast and align with design systems.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>input::placeholder { color: #888; font-style: italic; }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-4" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">04</div>
+        <div>
+          <p class="section-kicker">BOXES</p>
+          <h2>Box Model</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>width and height</h3>
+        <p><strong class="label-meta">Function:</strong> Defines the horizontal and vertical dimensions of an element's content area.</p>
+        <p><strong class="label-meta">How it works:</strong> Assigns explicit values measured in pixels, percentages, rem, or other valid CSS units.</p>
+        <p><strong class="label-meta">When to use:</strong> To establish fixed or relative sizes for containers and images.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.box { width: 300px; height: 150px; }</pre></p>
+      </article>
+
+      <article>
+        <h3>padding</h3>
+        <p><strong class="label-meta">Function:</strong> Sets the inner space between the content and the element's border.</p>
+        <p><strong class="label-meta">How it works:</strong> Expands internal clearance, directly affecting the visible background area of the element.</p>
+        <p><strong class="label-meta">When to use:</strong> To add breathing room around text inside buttons or containers.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.card { padding: 20px; }</pre></p>
+      </article>
+
+      <article>
+        <h3>margin</h3>
+        <p><strong class="label-meta">Function:</strong> Defines external clearance around the element to separate it from neighboring elements.</p>
+        <p><strong class="label-meta">How it works:</strong> Creates transparent space outside the border to push away surrounding layout elements.</p>
+        <p><strong class="label-meta">When to use:</strong> To separate blocks and sections, or center containers using <code>margin: auto</code>.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.container { margin: 0 auto 30px auto; }</pre></p>
+      </article>
+
+      <article>
+        <h3>border</h3>
+        <p><strong class="label-meta">Function:</strong> Configures the visual border surrounding the padding and content area of an element.</p>
+        <p><strong class="label-meta">How it works:</strong> Combines width, style (<code>solid</code>, <code>dashed</code>, etc.), and color into a single shorthand property.</p>
+        <p><strong class="label-meta">When to use:</strong> To outline frames, cards, dividers, or form input fields.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.input-field { border: 1px solid #ccc; }</pre></p>
+      </article>
+
+      <article>
+        <h3>box-sizing: border-box</h3>
+        <p><strong class="label-meta">Function:</strong> Alters how total element width and height are calculated.</p>
+        <p><strong class="label-meta">How it works:</strong> Includes <code>padding</code> and <code>border</code> values within the specified width and height, preventing unexpected size expansion.</p>
+        <p><strong class="label-meta">When to use:</strong> Recommended universally in virtually all modern web projects.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>* { box-sizing: border-box; }</pre></p>
+      </article>
+
+      <article>
+        <h3>overflow (auto, hidden, scroll)</h3>
+        <p><strong class="label-meta">Function:</strong> Controls how content that exceeds its container's boundaries is handled.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>hidden</code> clips overflowing content, <code>scroll</code> adds permanent scrollbars, and <code>auto</code> displays scrollbars only when necessary.</p>
+        <p><strong class="label-meta">When to use:</strong> To prevent unwanted layout breaks or build scrollable content boxes.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.scroll-box { overflow-y: auto; max-height: 200px; }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-5" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">05</div>
+        <div>
+          <p class="section-kicker">TEXT STYLES</p>
+          <h2>Typography and Text Properties</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>font-family</h3>
+        <p><strong class="label-meta">Function:</strong> Specifies the typeface or prioritized list of fallback fonts for text content.</p>
+        <p><strong class="label-meta">How it works:</strong> Tries loading fonts sequentially from left to right until finding an available system or web font.</p>
+        <p><strong class="label-meta">When to use:</strong> When defining global or component-specific typographic identities across a site.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>body { font-family: 'Roboto', Arial, sans-serif; }</pre></p>
+      </article>
+
+      <article>
+        <h3>font-size</h3>
+        <p><strong class="label-meta">Function:</strong> Sets the size or scale of text characters.</p>
+        <p><strong class="label-meta">How it works:</strong> Accepts absolute units (<code>px</code>) or relative units (<code>rem</code>, <code>em</code>, <code>%</code>, <code>vw</code>).</p>
+        <p><strong class="label-meta">When to use:</strong> To establish typographic hierarchy between headings, subheadings, and body copy.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>p { font-size: 1rem; }</pre></p>
+      </article>
+
+      <article>
+        <h3>font-weight</h3>
+        <p><strong class="label-meta">Function:</strong> Controls the stroke thickness or bold weight of text characters.</p>
+        <p><strong class="label-meta">How it works:</strong> Accepts numeric values (100 through 900) or descriptive keywords (<code>normal</code>, <code>bold</code>).</p>
+        <p><strong class="label-meta">When to use:</strong> To emphasize keywords, headers, or call-to-action buttons.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.highlight { font-weight: 700; }</pre></p>
+      </article>
+
+      <article>
+        <h3>line-height</h3>
+        <p><strong class="label-meta">Function:</strong> Sets leading or vertical line spacing within block text elements.</p>
+        <p><strong class="label-meta">How it works:</strong> Distributes extra space evenly above and below characters across each text line.</p>
+        <p><strong class="label-meta">When to use:</strong> To significantly improve readability in multi-line paragraphs.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>p { line-height: 1.5; }</pre></p>
+      </article>
+
+      <article>
+        <h3>text-align</h3>
+        <p><strong class="label-meta">Function:</strong> Dictates horizontal text alignment inside its parent block container.</p>
+        <p><strong class="label-meta">How it works:</strong> Aligns content to the left (<code>left</code>), right (<code>right</code>), center (<code>center</code>), or spreads it evenly (<code>justify</code>).</p>
+        <p><strong class="label-meta">When to use:</strong> To center headlines, right-align table figures, or align body paragraphs.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>h1 { text-align: center; }</pre></p>
+      </article>
+
+      <article>
+        <h3>text-transform</h3>
+        <p><strong class="label-meta">Function:</strong> Controls capitalization styling without modifying underlying HTML text source.</p>
+        <p><strong class="label-meta">How it works:</strong> Transforms character casing to uppercase (<code>uppercase</code>), lowercase (<code>lowercase</code>), or title case (<code>capitalize</code>).</p>
+        <p><strong class="label-meta">When to use:</strong> On buttons, labels, headers, or navigation items.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.menu-item { text-transform: uppercase; }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-6" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">06</div>
+        <div>
+          <p class="section-kicker">COLORS</p>
+          <h2>Colors, Backgrounds, and Gradients</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>color</h3>
+        <p><strong class="label-meta">Function:</strong> Sets the foreground color value for text and basic vector icons.</p>
+        <p><strong class="label-meta">How it works:</strong> Accepts keywords, Hexadecimal codes, RGB, HSL, or Oklch color notations.</p>
+        <p><strong class="label-meta">When to use:</strong> To set text readability colors for paragraphs, links, and icons.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>p { color: #2c3e50; }</pre></p>
+      </article>
+
+      <article>
+        <h3>background-color</h3>
+        <p><strong class="label-meta">Function:</strong> Applies a solid, uniform background color behind an element.</p>
+        <p><strong class="label-meta">How it works:</strong> Fills the entire element box, spanning behind content and padding layers.</p>
+        <p><strong class="label-meta">When to use:</strong> To highlight containers, page sections, cards, or main document backgrounds.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>section { background-color: rgba(0, 0, 0, 0.05); }</pre></p>
+      </article>
+
+      <article>
+        <h3>background-image and linear-gradient()</h3>
+        <p><strong class="label-meta">Function:</strong> Assigns external image files or progressive color gradients as element backgrounds.</p>
+        <p><strong class="label-meta">How it works:</strong> Renders raster image assets or dynamically generated gradient layers over the container.</p>
+        <p><strong class="label-meta">When to use:</strong> In hero banners, header backgrounds, or stylized color overlays.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.hero { background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }</pre></p>
+      </article>
+
+      <article>
+        <h3>background-size (cover, contain)</h3>
+        <p><strong class="label-meta">Function:</strong> Controls scaling behavior and display dimensions of background images.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>cover</code> scales images to fill containers completely (cropping if needed); <code>contain</code> fits entire images without clipping.</p>
+        <p><strong class="label-meta">When to use:</strong> When fitting decorative background assets across varying screen aspect ratios.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.banner { background-size: cover; background-position: center; }</pre></p>
+      </article>
+
+      <article>
+        <h3>box-shadow</h3>
+        <p><strong class="label-meta">Function:</strong> Casts drop shadow effects around an element's outer border box.</p>
+        <p><strong class="label-meta">How it works:</strong> Accepts X/Y offsets, blur radius, spread distance, and color to simulate visual depth and elevation.</p>
+        <p><strong class="label-meta">When to use:</strong> To add depth and tactile elevation to cards, modals, and interactive buttons.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.card { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }</pre></p>
+      </article>
+
+      <article>
+        <h3>opacity</h3>
+        <p><strong class="label-meta">Function:</strong> Controls overall transparency levels for an element and all of its children.</p>
+        <p><strong class="label-meta">How it works:</strong> Takes numeric values ranging from 0.0 (completely invisible) to 1.0 (fully opaque).</p>
+        <p><strong class="label-meta">When to use:</strong> For disabled states or fading transition effects during user interactions.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.overlay { opacity: 0.8; }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-7" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">07</div>
+        <div>
+          <p class="section-kicker">POSITIONING</p>
+          <h2>Positioning and Document Flow</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>display (block, inline, inline-block, none)</h3>
+        <p><strong class="label-meta">Function:</strong> Determines the formatting box type an element generates within document flow.</p>
+        <p><strong class="label-meta">How it works:</strong> Dictates how elements align relative to neighbors and whether they respect explicit dimensions.</p>
+        <p><strong class="label-meta">When to use:</strong> To override default HTML tag behaviors (e.g., converting an inline link to a block element).</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>a.btn { display: inline-block; }</pre></p>
+      </article>
+
+      <article>
+        <h3>position: relative</h3>
+        <p><strong class="label-meta">Function:</strong> Offsets an element relative to its natural position in document flow.</p>
+        <p><strong class="label-meta">How it works:</strong> Accepts directional offsets (top, right, bottom, left) without altering surrounding elements, serving as a reference for absolute children.</p>
+        <p><strong class="label-meta">When to use:</strong> As a positioning anchor for child elements set to <code>position: absolute</code>.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.parent { position: relative; }</pre></p>
+      </article>
+
+      <article>
+        <h3>position: absolute</h3>
+        <p><strong class="label-meta">Function:</strong> Removes an element from normal flow, positioning it precisely relative to its nearest positioned ancestor.</p>
+        <p><strong class="label-meta">How it works:</strong> Ignores sibling elements, placing itself using explicit coordinate offsets from container edges.</p>
+        <p><strong class="label-meta">When to use:</strong> For badges, pinned icons, tooltips, dropdowns, or decorative UI elements.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.badge { position: absolute; top: 10px; right: 10px; }</pre></p>
+      </article>
+
+      <article>
+        <h3>position: fixed</h3>
+        <p><strong class="label-meta">Function:</strong> Anchors an element in a fixed position relative to the browser viewport.</p>
+        <p><strong class="label-meta">How it works:</strong> Remains locked on screen in the same location even when the user scrolls through the page.</p>
+        <p><strong class="label-meta">When to use:</strong> For sticky top navigation bars, persistent floating chat widgets, or help buttons.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.navbar { position: fixed; top: 0; width: 100%; }</pre></p>
+      </article>
+
+      <article>
+        <h3>position: sticky</h3>
+        <p><strong class="label-meta">Function:</strong> Treats an element as relatively positioned until a scroll threshold is met, switching to fixed positioning.</p>
+        <p><strong class="label-meta">How it works:</strong> Toggles positioning modes based on user scroll position within its containing block boundary.</p>
+        <p><strong class="label-meta">When to use:</strong> For sticky table headers, sidebar menus, or table-of-contents widgets during reading.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.toc { position: sticky; top: 20px; }</pre></p>
+      </article>
+
+      <article>
+        <h3>z-index</h3>
+        <p><strong class="label-meta">Function:</strong> Specifies vertical stacking order along the Z-axis for positioned elements.</p>
+        <p><strong class="label-meta">How it works:</strong> Elements with higher integer values render on top of overlapping elements with lower indices.</p>
+        <p><strong class="label-meta">When to use:</strong> To manage layered components like dropdown menus, modals, and backdrop overlays.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.modal { z-index: 1000; }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-8" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">08</div>
+        <div>
+          <p class="section-kicker">FLEXBOX</p>
+          <h2>Flexible Layout (Flexbox)</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>display: flex</h3>
+        <p><strong class="label-meta">Function:</strong> Enables flexible box layout on a container, making its immediate children flex items.</p>
+        <p><strong class="label-meta">How it works:</strong> Establishes primary and cross axes to dynamically distribute free space among items.</p>
+        <p><strong class="label-meta">When to use:</strong> For one-dimensional layouts like navigation bars, row alignment, or column stacks.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.flex-container { display: flex; }</pre></p>
+      </article>
+
+      <article>
+        <h3>flex-direction</h3>
+        <p><strong class="label-meta">Function:</strong> Defines the orientation of the main axis inside a flex container.</p>
+        <p><strong class="label-meta">How it works:</strong> Arranges flex items horizontally (<code>row</code>) or stacked vertically (<code>column</code>).</p>
+        <p><strong class="label-meta">When to use:</strong> To organize responsive items in rows or switch them into vertical stacks for mobile viewports.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.flex-container { flex-direction: column; }</pre></p>
+      </article>
+
+      <article>
+        <h3>justify-content</h3>
+        <p><strong class="label-meta">Function:</strong> Aligns flex items along the main axis of the container.</p>
+        <p><strong class="label-meta">How it works:</strong> Distributes remaining free space using options like <code>center</code>, <code>space-between</code>, <code>space-around</code>, or <code>space-evenly</code>.</p>
+        <p><strong class="label-meta">When to use:</strong> To center items horizontally or spread header links evenly across available width.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.nav-list { justify-content: space-between; }</pre></p>
+      </article>
+
+      <article>
+        <h3>align-items</h3>
+        <p><strong class="label-meta">Function:</strong> Controls flex item alignment along the cross axis (perpendicular to main axis).</p>
+        <p><strong class="label-meta">How it works:</strong> Positions items cross-wise using <code>center</code>, <code>flex-start</code>, <code>flex-end</code>, or <code>stretch</code>.</p>
+        <p><strong class="label-meta">When to use:</strong> To center items vertically within a row of varying element heights.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.row { align-items: center; }</pre></p>
+      </article>
+
+      <article>
+        <h3>flex-wrap</h3>
+        <p><strong class="label-meta">Function:</strong> Dictates whether flex items are forced into a single line or allowed to wrap onto multiple lines.</p>
+        <p><strong class="label-meta">How it works:</strong> When set to <code>wrap</code>, overflowing items automatically break onto new lines as space shrinks.</p>
+        <p><strong class="label-meta">When to use:</strong> In photo galleries, tag lists, or flexible multi-row grid components using Flexbox.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.tags-container { flex-wrap: wrap; }</pre></p>
+      </article>
+
+      <article>
+        <h3>flex (grow, shrink, basis)</h3>
+        <p><strong class="label-meta">Function:</strong> Shorthand rule setting a flex item's ability to grow, shrink, or set its initial base size.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>flex-grow</code> sets growth proportion, <code>flex-shrink</code> controls shrink resistance, and <code>flex-basis</code> sets starting width.</p>
+        <p><strong class="label-meta">When to use:</strong> To control proportional stretching or shrinking across flexible columns and sidebars.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.sidebar { flex: 0 0 250px; } .content { flex: 1; }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-9" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">09</div>
+        <div>
+          <p class="section-kicker">GRID</p>
+          <h2>Grid Layout (CSS Grid)</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>display: grid</h3>
+        <p><strong class="label-meta">Function:</strong> Enables a two-dimensional grid layout system on the target container element.</p>
+        <p><strong class="label-meta">How it works:</strong> Manages both horizontal alignments (columns) and vertical alignments (rows) simultaneously.</p>
+        <p><strong class="label-meta">When to use:</strong> For building complex page layouts, full application structures, or card galleries.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.grid-layout { display: grid; }</pre></p>
+      </article>
+
+      <article>
+        <h3>grid-template-columns and grid-template-rows</h3>
+        <p><strong class="label-meta">Function:</strong> Sets explicit tracks, counts, and sizing dimensions for grid columns and rows.</p>
+        <p><strong class="label-meta">How it works:</strong> Accepts fixed lengths, percentages, fractional units (<code>fr</code>), and the <code>repeat()</code> helper function.</p>
+        <p><strong class="label-syntax">When to use:</strong> To define column tracks and structural column layouts inside grid containers.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.grid { grid-template-columns: repeat(3, 1fr); }</pre></p>
+      </article>
+
+      <article>
+        <h3>gap (column-gap, row-gap)</h3>
+        <p><strong class="label-meta">Function:</strong> Sets gutter spacing between grid cells or flex items.</p>
+        <p><strong class="label-meta">How it works:</strong> Inserts clean spacing strictly between items without adding unwanted outer margins around the grid container.</p>
+        <p><strong class="label-meta">When to use:</strong> Modern replacement for traditional outer item margins inside multi-column layouts.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.grid-container { gap: 20px; }</pre></p>
+      </article>
+
+      <article>
+        <h3>grid-column and grid-row</h3>
+        <p><strong class="label-meta">Function:</strong> Specifies start and end grid line placements for individual child items inside grid tracks.</p>
+        <p><strong class="label-meta">How it works:</strong> Allows elements to span across multiple grid track lines using the <code>span</code> keyword.</p>
+        <p><strong class="label-meta">When to use:</strong> To build feature items, image mosaics, or full-width banner rows inside grid layouts.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.featured-item { grid-column: span 2; }</pre></p>
+      </article>
+
+      <article>
+        <h3>grid-template-areas</h3>
+        <p><strong class="label-meta">Function:</strong> Maps out grid layouts named by semantic text areas within a visual ASCII layout map.</p>
+        <p><strong class="label-meta">How it works:</strong> Maps layout regions visually using strings that mirror structural grid locations.</p>
+        <p><strong class="label-meta">When to use:</strong> To quickly construct high-level site page layouts (header, sidebar, main, footer).</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.layout { grid-template-areas: "header header" "sidebar main" "footer footer"; }</pre></p>
+      </article>
+
+      <article>
+        <h3>auto-fit and auto-fill with minmax()</h3>
+        <p><strong class="label-meta">Function:</strong> Creates automatically responsive grid track layouts without requiring media queries.</p>
+        <p><strong class="label-meta">How it works:</strong> Dynamically calculates track columns based on specified minimum item widths to fill container space.</p>
+        <p><strong class="label-meta">When to use:</strong> For fluid product catalogs, card layouts, or auto-adapting image galleries.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.gallery { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-10" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">10</div>
+        <div>
+          <p class="section-kicker">DIMENSIONS TRANSFORMS</p>
+          <h2>2D and 3D Transforms</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>transform: translate()</h3>
+        <p><strong class="label-meta">Function:</strong> Re-positions an element visually along X and Y spatial axes.</p>
+        <p><strong class="label-meta">How it works:</strong> Moves element rendering without affecting surrounding document layout flow or neighbor positions.</p>
+        <p><strong class="label-meta">When to use:</strong> In hover animations, subtle UI interactions, or centering elements precisely with absolute positioning.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.centered { transform: translate(-50%, -50%); }</pre></p>
+      </article>
+
+      <article>
+        <h3>transform: scale()</h3>
+        <p><strong class="label-meta">Function:</strong> Resizes or scales an element up or down relative to its original size.</p>
+        <p><strong class="label-meta">How it works:</strong> Multiplies original dimensions using a decimal scale factor (e.g., 1.2 = 120% size).</p>
+        <p><strong class="label-meta">When to use:</strong> To create zoom-in visual effects on cards or thumbnail images during hover (<code>:hover</code>).</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.card:hover { transform: scale(1.05); }</pre></p>
+      </article>
+
+      <article>
+        <h3>transform: rotate()</h3>
+        <p><strong class="label-meta">Function:</strong> Rotates an element around a fixed origin point by a specified angular value.</p>
+        <p><strong class="label-meta">How it works:</strong> Applies angular rotation measured in degrees (<code>deg</code>), gradians (<code>grad</code>), or turns (<code>turn</code>).</p>
+        <p><strong class="label-meta">When to use:</strong> To rotate cards, animate UI toggles, flip indicators, or create loading animations.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.icon-spin { transform: rotate(180deg); }</pre></p>
+      </article>
+
+      <article>
+        <h3>transform-origin</h3>
+        <p><strong class="label-meta">Function:</strong> Sets the origin or anchor point from which element transforms are computed.</p>
+        <p><strong class="label-meta">How it works:</strong> Defaults to the center (50% 50%), but can be moved to any corner or custom coordinate location.</p>
+        <p><strong class="label-meta">When to use:</strong> For clock-hand rotations, swinging doors, or custom unrolling panel transitions.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.pin { transform-origin: top left; }</pre></p>
+      </article>
+
+      <article>
+        <h3>perspective and transform-style: preserve-3d</h3>
+        <p><strong class="label-meta">Function:</strong> Enables 3D spatial depth and realistic perspective environments for transformed child elements.</p>
+        <p><strong class="label-meta">How it works:</strong> Simulates focal distance between user viewports and 3D planes, projecting points in 3D space.</p>
+        <p><strong class="label-meta">When to use:</strong> In 3D flip cards, rotating cubes, or deep perspective image carousels.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.scene { perspective: 1000px; } .cube { transform-style: preserve-3d; }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-11" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">11</div>
+        <div>
+          <p class="section-kicker">ANIMATIONS</p>
+          <h2>Transitions and Animations (@keyframes)</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>transition-property and transition-duration</h3>
+        <p><strong class="label-meta">Function:</strong> Sets which CSS properties animate smoothly and defines the duration of the transition phase.</p>
+        <p><strong class="label-meta">How it works:</strong> Interpolates intermediate values between initial and final states of a CSS property change.</p>
+        <p><strong class="label-meta">When to use:</strong> To smooth out visual changes like background colors, box-shadows, or transforms upon interaction.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.btn { transition: background-color 0.3s ease, transform 0.2s ease; }</pre></p>
+      </article>
+
+      <article>
+        <h3>transition-timing-function (ease, linear, cubic-bezier)</h3>
+        <p><strong class="label-meta">Function:</strong> Defines the acceleration curve and pacing during property transition executions.</p>
+        <p><strong class="label-meta">How it works:</strong> Modifies speed curves over time, allowing gradual accelerations or dynamic spring effects.</p>
+        <p><strong class="label-meta">When to use:</strong> To achieve fluid motion and natural-feeling interface transitions.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.modal { transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55); }</pre></p>
+      </article>
+
+      <article>
+        <h3>@keyframes</h3>
+        <p><strong class="label-meta">Function:</strong> Declares keyframe steps, sequence stages, and key states of custom CSS animations.</p>
+        <p><strong class="label-meta">How it works:</strong> Defines keyframe checkpoints (expressed as percentages or <code>from/to</code> keywords) along an animation timeline.</p>
+        <p><strong class="label-meta">When to use:</strong> For designing multi-step, complex, or continuously looping visual animations.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>@keyframes pulse { 0% { scale: 1; } 50% { scale: 1.1; } 100% { scale: 1; } }</pre></p>
+      </article>
+
+      <article>
+        <h3>animation-name and animation-duration</h3>
+        <p><strong class="label-meta">Function:</strong> Binds a custom <code>@keyframes</code> sequence rule to an element and assigns its total cycle duration.</p>
+        <p><strong class="label-meta">How it works:</strong> Links animation timeline logic with target DOM nodes and triggers playback using specified durations.</p>
+        <p><strong class="label-meta">When to use:</strong> To trigger custom animations on UI components.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.loader { animation-name: pulse; animation-duration: 2s; }</pre></p>
+      </article>
+
+      <article>
+        <h3>animation-iteration-count (infinite) and animation-fill-mode</h3>
+        <p><strong class="label-meta">Function:</strong> Dictates cycle repetition counts and defines final property states after animation completion.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>infinite</code> loops animations continuously; <code>forwards</code> retains styles defined in the final keyframe upon ending.</p>
+        <p><strong class="label-meta">When to use:</strong> On loading spinners (continuous loops) or entrance animations (retaining final visible states).</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.spinner { animation: spin 1s linear infinite; }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-12" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">12</div>
+        <div>
+          <p class="section-kicker">RESPONSIVE</p>
+          <h2>Media Queries and Responsive Design</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>@media (min-width / max-width)</h3>
+        <p><strong class="label-meta">Function:</strong> Conditionally applies CSS rules based on device viewport features or screen characteristics.</p>
+        <p><strong class="label-meta">How it works:</strong> Evaluates active viewport widths and applies enclosed rules only when matching specified constraints.</p>
+        <p><strong class="label-meta">When to use:</strong> The foundational tool for building responsive layouts across mobile, tablet, and desktop displays.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>@media (min-width: 768px) { .sidebar { display: block; } }</pre></p>
+      </article>
+
+      <article>
+        <h3>Mobile-First Strategy</h3>
+        <p><strong class="label-meta">Function:</strong> Development approach where base styles target small screens first and scale up using <code>min-width</code> queries.</p>
+        <p><strong class="label-meta">How it works:</strong> Optimizes performance by keeping base mobile CSS lightweight and adding complexity progressively for desktop views.</p>
+        <p><strong class="label-meta">When to use:</strong> Universally recommended as a best practice in modern professional web design.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.col { width: 100%; } @media (min-width: 1024px) { .col { width: 33.3%; } }</pre></p>
+      </article>
+
+      <article>
+        <h3>@media (prefers-color-scheme)</h3>
+        <p><strong class="label-meta">Function:</strong> Detects whether system OS preferences are set to light or dark appearance modes.</p>
+        <p><strong class="label-meta">How it works:</strong> Automatically adapts a website's color theme based on system-level user preferences.</p>
+        <p><strong class="label-meta">When to use:</strong> To provide native, automatic support for Dark Mode styling across your site.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>@media (prefers-color-scheme: dark) { body { background: #121212; color: #fff; } }</pre></p>
+      </article>
+
+      <article>
+        <h3>@media (orientation: portrait / landscape)</h3>
+        <p><strong class="label-meta">Function:</strong> Detects physical device viewport orientation (portrait or landscape modes).</p>
+        <p><strong class="label-meta">How it works:</strong> Checks whether screen width exceeds height (<code>landscape</code>) or vice versa (<code>portrait</code>).</p>
+        <p><strong class="label-meta">When to use:</strong> To adapt mobile app layouts or media views based on device rotation.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>@media (orientation: landscape) { .hero { height: 100vh; } }</pre></p>
+      </article>
+
+      <article>
+        <h3>Viewport Units (vw, vh, vmin, vmax)</h3>
+        <p><strong class="label-meta">Function:</strong> Proportional length units calculated directly as percentages of the visible browser viewport size.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>1vw</code> equals 1% of viewport width; <code>1vh</code> represents 1% of total viewport height.</p>
+        <p><strong class="label-meta">When to use:</strong> For full-screen hero sections, full-height panels, or fluid viewport-based typography.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.full-screen { height: 100vh; width: 100vw; }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-13" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">13</div>
+        <div>
+          <p class="section-kicker">VARIABLES</p>
+          <h2>CSS Variables (Custom Properties)</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>Declaring Variables (--my-variable)</h3>
+        <p><strong class="label-meta">Function:</strong> Stores reusable CSS values (colors, spacing, fonts) under custom variable names.</p>
+        <p><strong class="label-meta">How it works:</strong> Commonly declared on the <code>:root</code> pseudo-class to ensure global availability across the DOM tree.</p>
+        <p><strong class="label-meta">When to use:</strong> To maintain design system consistency and enable centralized global style updates.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>:root { --primary-color: #3498db; --spacing-md: 16px; }</pre></p>
+      </article>
+
+      <article>
+        <h3>Consuming Variables with var()</h3>
+        <p><strong class="label-meta">Function:</strong> Retrieves and applies stored values from defined custom properties.</p>
+        <p><strong class="label-meta">How it works:</strong> Replaces function calls dynamically with computed variable values during rendering.</p>
+        <p><strong class="label-meta">When to use:</strong> When styling UI components that consume global design tokens.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.btn-primary { background-color: var(--primary-color); padding: var(--spacing-md); }</pre></p>
+      </article>
+
+      <article>
+        <h3>Fallback Values in var()</h3>
+        <p><strong class="label-meta">Function:</strong> Supplies backup default values if requested CSS variables are undefined.</p>
+        <p><strong class="label-meta">How it works:</strong> The browser renders the secondary parameter if the target variable isn't resolved along the cascade.</p>
+        <p><strong class="label-meta">When to use:</strong> When building isolated standalone components or reusable UI libraries susceptible to missing global tokens.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.card { color: var(--card-color, #333333); }</pre></p>
+      </article>
+
+      <article>
+        <h3>Variable Scope and Inheritance</h3>
+        <p><strong class="label-meta">Function:</strong> Custom properties respect DOM scoping, allowing contextual overrides within localized containers.</p>
+        <p><strong class="label-meta">How it works:</strong> Re-defines variable values locally inside specific containers without polluting or breaking global scope.</p>
+        <p><strong class="label-meta">When to use:</strong> For contextual themes, localized dark sections, or sub-component variations.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.dark-zone { --primary-color: #ffffff; }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-14" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">14</div>
+        <div>
+          <p class="section-kicker">FILTERS</p>
+          <h2>Filters and Blend Modes</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>filter: blur()</h3>
+        <p><strong class="label-meta">Function:</strong> Applies a Gaussian blur filter effect to rendered element graphics.</p>
+        <p><strong class="label-meta">How it works:</strong> Softens pixel detail across the target element using specified blur radius values in length units.</p>
+        <p><strong class="label-meta">When to use:</strong> For out-of-focus background panels, soft drop shadows, or visual privacy overlays.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.bg-blurred { filter: blur(5px); }</pre></p>
+      </article>
+
+      <article>
+        <h3>filter: grayscale(), brightness(), contrast()</h3>
+        <p><strong class="label-meta">Function:</strong> Adjusts color tone, saturation, brightness, and contrast rendering on elements and images.</p>
+        <p><strong class="label-meta">How it works:</strong> Dynamically adjusts output color channels on browser-rendered visual layers.</p>
+        <p><strong class="label-meta">When to use:</strong> For black-and-white client logo strips that reveal full color on mouse hover (<code>:hover</code>).</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.logo { filter: grayscale(100%); } .logo:hover { filter: grayscale(0%); }</pre></p>
+      </article>
+
+      <article>
+        <h3>backdrop-filter</h3>
+        <p><strong class="label-meta">Function:</strong> Applies graphical filter effects (like Gaussian blurs) directly to the area sitting behind an element.</p>
+        <p><strong class="label-meta">How it works:</strong> Alters background rendering beneath semi-transparent elements, enabling Frosted Glass (Glassmorphism) effects.</p>
+        <p><strong class="label-meta">When to use:</strong> On translucent floating headers, modal overlays, and modern navigation panels.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.glass-header { background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); }</pre></p>
+      </article>
+
+      <article>
+        <h3>mix-blend-mode</h3>
+        <p><strong class="label-meta">Function:</strong> Specifies how an element's foreground colors blend mathematically with underlying background content.</p>
+        <p><strong class="label-meta">How it works:</strong> Applies blending algorithms between overlapping visual layers (<code>multiply</code>, <code>screen</code>, <code>overlay</code>, <code>difference</code>).</p>
+        <p><strong class="label-meta">When to use:</strong> For creative typography overlays set across vibrant image backgrounds.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.overlay-title { mix-blend-mode: difference; color: white; }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-15" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">15</div>
+        <div>
+          <p class="section-kicker">MATH FUNCTIONS</p>
+          <h2>CSS Math Functions</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>calc()</h3>
+        <p><strong class="label-meta">Function:</strong> Evaluates basic mathematical calculations (addition, subtraction, multiplication, division) to set CSS values.</p>
+        <p><strong class="label-meta">How it works:</strong> Dynamically mixes differing CSS units (e.g., subtracting fixed pixels from percentages) at layout rendering time.</p>
+        <p><strong class="label-meta">When to use:</strong> For calculating dynamic content widths while accounting for fixed sidebars or margins.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.content { width: calc(100% - 250px); }</pre></p>
+      </article>
+
+      <article>
+        <h3>min()</h3>
+        <p><strong class="label-meta">Function:</strong> Selects the smallest value from a comma-separated list of expressions.</p>
+        <p><strong class="label-meta">How it works:</strong> Sets a maximum cap or upper boundary, ensuring values never exceed specified limits.</p>
+        <p><strong class="label-meta">When to use:</strong> For fluid containers that adapt to mobile viewports while capping max widths on desktop displays.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.wrapper { width: min(100%, 1200px); }</pre></p>
+      </article>
+
+      <article>
+        <h3>max()</h3>
+        <p><strong class="label-meta">Function:</strong> Selects the largest value from a comma-separated list of arguments.</p>
+        <p><strong class="label-meta">How it works:</strong> Sets a minimum threshold, preventing computed properties from dropping below a baseline size.</p>
+        <p><strong class="label-meta">When to use:</strong> Ensuring typography or internal paddings stay readable and don't shrink excessively on mobile screens.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.title { font-size: max(18px, 4vw); }</pre></p>
+      </article>
+
+      <article>
+        <h3>clamp()</h3>
+        <p><strong class="label-meta">Function:</strong> Clamps values between defined minimum bounds, preferred fluid targets, and maximum limits.</p>
+        <p><strong class="label-meta">How it works:</strong> Scales fluidly according to screen sizes while locking within explicitly set lower and upper bounds.</p>
+        <p><strong class="label-meta">When to use:</strong> Modern web standard for fluid typography and responsive layout spacing without media queries.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>h1 { font-size: clamp(1.5rem, 5vw, 3rem); }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-16" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">16</div>
+        <div>
+          <p class="section-kicker">PROPERTIES</p>
+          <h2>CSS Logical Properties</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>margin-inline and margin-block</h3>
+        <p><strong class="label-meta">Function:</strong> Replaces physical horizontal (left/right) and vertical (top/bottom) margins based on writing mode direction.</p>
+        <p><strong class="label-meta">How it works:</strong> Automatically adapts spacing according to global text writing directions (LTR vs RTL languages).</p>
+        <p><strong class="label-meta">When to use:</strong> For writing internationalization-ready code across multi-language web applications.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.container { margin-inline: auto; margin-block: 20px; }</pre></p>
+      </article>
+
+      <article>
+        <h3>padding-inline and padding-block</h3>
+        <p><strong class="label-meta">Function:</strong> Defines logical internal padding along inline (horizontal) or block (vertical) layout axes.</p>
+        <p><strong class="label-meta">How it works:</strong> Applies padding at start and end inline directions regardless of physical screen orientation.</p>
+        <p><strong class="label-meta">When to use:</strong> For clean internal spacing inside directional UI components.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.btn { padding-inline: 16px; padding-block: 8px; }</pre></p>
+      </article>
+
+      <article>
+        <h3>inline-size and block-size</h3>
+        <p><strong class="label-meta">Function:</strong> Logical property replacements for traditional <code>width</code> and <code>height</code> properties.</p>
+        <p><strong class="label-meta">How it works:</strong> <code>inline-size</code> maps to width in horizontal text modes; <code>block-size</code> maps to vertical height.</p>
+        <p><strong class="label-meta">When to use:</strong> In modern logical layouts built for multi-directional text internationalization.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.box { inline-size: 100%; block-size: 200px; }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-17" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">17</div>
+        <div>
+          <p class="section-kicker">QUERIES</p>
+          <h2>Container Queries</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>container-type (inline-size)</h3>
+        <p><strong class="label-meta">Function:</strong> Establishes an element as an explicit containment context for descendant container queries.</p>
+        <p><strong class="label-meta">How it works:</strong> Allows child elements to query and adjust layouts according to their immediate parent container width rather than the screen viewport.</p>
+        <p><strong class="label-meta">When to use:</strong> Building modular UI components suitable for reuse inside sidebars or primary content areas.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>.card-wrapper { container-type: inline-size; }</pre></p>
+      </article>
+
+      <article>
+        <h3>@container Rule</h3>
+        <p><strong class="label-meta">Function:</strong> Applies conditional styling rules to elements based on parent container dimensions.</p>
+        <p><strong class="label-meta">How it works:</strong> Evaluates spatial context of ancestor containment contexts instead of global browser viewport sizes.</p>
+        <p><strong class="label-meta">When to use:</strong> Adapting self-contained components (like cards) that alter layout based on where they are placed.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>@container (min-width: 400px) { .card { display: flex; } }</pre></p>
+      </article>
+    </section>
+
+    <section id="block-18" class="guide-section">
+      <div class="section-heading">
+        <div class="section-number">18</div>
+        <div>
+          <p class="section-kicker">AT-RULES</p>
+          <h2>Advanced At-Rules (@layer, @supports)</h2>
+        </div>
+      </div>
+
+      <article>
+        <h3>@layer (Cascade Layers)</h3>
+        <p><strong class="label-meta">Function:</strong> Declares explicit cascade layers to systematically manage CSS precedence and specificity order.</p>
+        <p><strong class="label-meta">How it works:</strong> Resolves specificity conflicts cleanly regardless of rule declaration order across external or local files.</p>
+        <p><strong class="label-meta">When to use:</strong> In large applications to isolate base defaults, framework styles, UI components, and utility overrides.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>@layer base, components, utilities; @layer base { h1 { color: blue; } }</pre></p>
+      </article>
+
+      <article>
+        <h3>@supports (Feature Queries)</h3>
+        <p><strong class="label-meta">Function:</strong> Tests browser support for specific CSS property-value pairs before applying enclosed rules.</p>
+        <p><strong class="label-meta">How it works:</strong> Executes enclosed styling rules only if feature testing returns positive browser support.</p>
+        <p><strong class="label-meta">When to use:</strong> Implementing cutting-edge CSS features while providing fallback styles for older user agents.</p>
+        <p><strong class="label-syntax">Syntax:</strong> <pre>@supports (backdrop-filter: blur(5px)) { .glass { backdrop-filter: blur(5px); } }</pre></p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Web Dev Guide <span aria-hidden="true">·</span> CSS Reference <span aria-hidden="true">·</span> 18 Blocks</p>
+  </footer>
+
+<script>
+  const searchInput = document.getElementById('search-input');
+
+  function scrollToMatch() {
+    const filter = searchInput.value.toLowerCase().trim();
+    if (!filter) return;
+
+    const articles = document.querySelectorAll('main article');
+
+    for (const article of articles) {
+      const text = article.textContent.toLowerCase();
+
+      if (text.includes(filter)) {
+        
+        article.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+
+        article.style.transition = 'background-color 0.3s';
+        const originalBg = article.style.backgroundColor;
+        article.style.backgroundColor = '#12334a';
+
+        setTimeout(() => {
+          article.style.backgroundColor = originalBg;
+        }, 1500);
+
+        break; 
+      }
+    }
+  }
+
+  searchInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault(); 
+      scrollToMatch();
+    }
+  });
+
+  searchInput.addEventListener('change', scrollToMatch);
+</script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('header');
+    const backToTopBtn = document.getElementById('btn-back-to-top');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0 });
+
+    if (header) {
+      observer.observe(header);
+    }
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+
+<button id="btn-back-to-top" class="btn-back-to-top" aria-label="Volver arriba">
+  ↑
+</button>
+
+</body>
+</html>

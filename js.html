@@ -1,0 +1,2669 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   JavaScript — Web Dev Guide
+  </title>
+  <link href="js.css" rel="stylesheet"/>
+  <link href="favicon.ico" rel="icon" type="image/png"/>
+ </head>
+ <body>
+  <header class="tech-header">
+   <div class="tech-header-inner">
+    <div class="search-container">
+     <label class="search-label" for="search-input">
+      JS REFERENCE GUIDE
+     </label>
+     <div class="search-field">
+      <span aria-hidden="true" class="search-icon">
+       ⌕
+      </span>
+      <input aria-label="Search the JavaScript guide" class="search-input" id="search-input" placeholder="Search concept or tag..." type="text"/>
+     </div>
+    </div>
+    <div class="tech-hero">
+     <div class="tech-badge">
+      JAVASCRIPT
+     </div>
+     <div class="tech-title-row">
+      <div>
+       <div class="tech-kicker">
+        WEB DEV GUIDE
+       </div>
+       <h1>
+        JavaScript
+        <span>
+         (JS)
+        </span>
+       </h1>
+      </div>
+      <div class="tech-index">
+       <span>
+        03
+       </span>
+       <small>
+        TECHNOLOGY
+       </small>
+      </div>
+     </div>
+     <p class="tech-intro">
+      JavaScript (JS) is the standard programming language used to bring interactivity, dynamic behavior, and control logic to web pages. Its primary function is to manipulate the DOM, manage user events, process data, and communicate asynchronously with web servers.
+     </p>
+    </div>
+   </div>
+  </header>
+  <nav class="toc">
+   <div class="toc-inner">
+    <div class="toc-header">
+     <div>
+      <p class="toc-kicker">
+       CONTENTS
+      </p>
+      <h2>
+       JS reference
+      </h2>
+     </div>
+     <span class="toc-count">
+      18 BLOCKS
+     </span>
+    </div>
+    <div class="toc-links">
+     <a href="#block-1">
+      <span>
+       01
+      </span>
+      Base Structure and Language Insertion
+     </a>
+     <a href="#block-2">
+      <span>
+       02
+      </span>
+      Variables, Constants, and Scopes
+     </a>
+     <a href="#block-3">
+      <span>
+       03
+      </span>
+      Primitive Data Types and Literals
+     </a>
+     <a href="#block-4">
+      <span>
+       04
+      </span>
+      Complex Data Structures (Objects, Arrays, Map, and Set)
+     </a>
+     <a href="#block-5">
+      <span>
+       05
+      </span>
+      Arithmetic, Logical, Assignment, and Comparison Operators
+     </a>
+     <a href="#block-6">
+      <span>
+       06
+      </span>
+      Conditional Flow Control and Branching
+     </a>
+     <a href="#block-7">
+      <span>
+       07
+      </span>
+      Loops, Iteration, and Generators
+     </a>
+     <a href="#block-8">
+      <span>
+       08
+      </span>
+      Functions, Parameters, and Expressions
+     </a>
+     <a href="#block-9">
+      <span>
+       09
+      </span>
+      Advanced Functions, Closures, and Basic Asynchrony
+     </a>
+     <a href="#block-10">
+      <span>
+       10
+      </span>
+      DOM Manipulation and Node Traversal
+     </a>
+     <a href="#block-11">
+      <span>
+       11
+      </span>
+      Browser Event Management and Propagation
+     </a>
+     <a href="#block-12">
+      <span>
+       12
+      </span>
+      Advanced Asynchronous Programming, Fetch API, and AJAX
+     </a>
+     <a href="#block-13">
+      <span>
+       13
+      </span>
+      Object-Oriented Programming, Classes, and Prototypes
+     </a>
+     <a href="#block-14">
+      <span>
+       14
+      </span>
+      Error Handling, Exceptions, and Debugging
+     </a>
+     <a href="#block-15">
+      <span>
+       15
+      </span>
+      Modules and Code Architecture (ES Modules)
+     </a>
+     <a href="#block-16">
+      <span>
+       16
+      </span>
+      Local Storage, Cookies, and Persistence
+     </a>
+     <a href="#block-17">
+      <span>
+       17
+      </span>
+      Regular Expressions (RegEx) and String Methods
+     </a>
+     <a href="#block-18">
+      <span>
+       18
+      </span>
+      System APIs, Workers, and Modern Features (ESNext)
+     </a>
+    </div>
+   </div>
+  </nav>
+  <main class="guide-content">
+   <!-- BLOCK 1 -->
+   <section class="guide-section" id="block-1">
+    <div class="section-heading">
+     <div class="section-number">
+      01
+     </div>
+     <div>
+      <p class="section-kicker">
+       STRUCTURE
+      </p>
+      <h2>
+       Base Structure and Language Insertion
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      &lt;script&gt; Tag (Internal)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Serves to write and embed JavaScript code blocks directly within an HTML file.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      The browser execution engine temporarily pauses parsing the HTML document, interprets, and executes the statements written inside the block immediately.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      For small test scripts, brief initial configurations, or rapid prototyping.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>&lt;script&gt;console.log("Application initialized successfully.");&lt;/script&gt;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      &lt;script src&gt; Tag (External File)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Serves to link an external executable JavaScript file (.js) to the HTML page.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      The browser makes an independent network request to download the script file and processes its content separately from the HTML structure.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      In most web projects to maintain a clean separation between structure and behavior.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>&lt;script src="main.js"&gt;&lt;/script&gt;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      defer Attribute
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Serves to download the external script in the background without interrupting HTML parsing.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Instructs the browser to continue building the DOM and postpone script execution until the HTML document has been fully parsed.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      On scripts that require all visual DOM elements to be loaded before executing.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>&lt;script src="app.js" defer&gt;&lt;/script&gt;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      async Attribute
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Serves to download and execute a script asynchronously as soon as it becomes available.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Downloads the file in the background and pauses HTML parsing only for the exact time required to execute the downloaded code.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      On independent scripts that do not rely on other files or the DOM structure, such as analytics or advertising tools.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>&lt;script src="analytics.js" async&gt;&lt;/script&gt;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      "use strict" Directive (Strict Mode)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Serves to restrict code execution to a safer, more rigorous variant of JavaScript.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Eliminates silent errors in the language by throwing explicit exceptions and disables obsolete or potentially unsafe syntax.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      At the beginning of .js files or function blocks to prevent silent bugs and unintended global variables.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>"use strict"; x = 3.14;</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 2 -->
+   <section class="guide-section" id="block-2">
+    <div class="section-heading">
+     <div class="section-number">
+      02
+     </div>
+     <div>
+      <p class="section-kicker">
+       VARIABLES AND CONSTANTS
+      </p>
+      <h2>
+       Variables, Constants, and Scopes
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      let Declaration
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Serves to declare variables whose value can change over time, scoped to a block.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Creates a reassignable memory reference that only exists within the curly-brace-delimited block where it was declared.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      For counters, accumulators, or state variables that require reassignment.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>let counter = 0; counter = counter + 1;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      const Declaration
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Serves to declare read-only constants whose memory reference cannot be reassigned.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Locks direct reassignment of the variable within its block scope, ensuring the identifier always points to the same initial data or address.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      By default for all variables, object references, arrays, and functions that do not require reference changes.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const API_URL = "https://api.company.com/v1";</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      var Declaration
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Historical variable declaration with function scope or global scope.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Hoists its declaration to the top of the current scope via hoisting, ignoring the block scope of conditions or loops.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      Not recommended in modern JavaScript; replaced by let and const.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>var name = "Carlos";</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 3 -->
+   <section class="guide-section" id="block-3">
+    <div class="section-heading">
+     <div class="section-number">
+      03
+     </div>
+     <div>
+      <p class="section-kicker">
+       DATA TYPES
+      </p>
+      <h2>
+       Primitive Data Types and Literals
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      String Type
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Represents and manipulates text sequences or strings.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Stores characters in UTF-16 format delimited by double quotes, single quotes, or template literals.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      For names, descriptions, messages, and text-based interactivity.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>let user = "Ana"; let message = "Hello " + user;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Number Type
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Represents integer or double-precision floating-point numerical values.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Enables direct mathematical operations using the IEEE 754 64-bit standard.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      For prices, indices, quantities, geometric calculations, or metrics.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>let price = 99.99; let quantity = 5;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      BigInt Type
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Represents arbitrary-precision integers for values greater than the standard numeric limit.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Stores integers of unlimited size by appending an 'n' to the end of the number or invoking the BigInt constructor function.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       When to use:
+      </strong>
+      For banking transaction identifiers, massive unique IDs, or cryptographic calculations.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const hugeNumber = 9007199254740991n;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Boolean Type
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Represents a logical entity that takes only one of two values: true or false.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Models control flags and logical switches within conditional evaluations in code.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      In state validations, permissions, or flow control conditions.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>let isActive = true;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      null Value
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Indicates the intentional and deliberate absence of any object or value.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Assigns an empty reference to a variable to indicate that data has been cleared or purposefully initialized empty.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To deliberately reset variables or indicate empty results in search operations.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>let serverResponse = null;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      undefined Value
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Indicates that a variable has been declared but not yet assigned a value.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      It is the default value automatically assigned by the JavaScript engine to unprovided variables or parameters.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To verify if a variable has received an initial value or if a property exists.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>let unassignedData; console.log(unassignedData);</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Symbol Type
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Creates unique and immutable identifiers to prevent name collisions.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Generates a completely unique key in memory guaranteed not to clash with any other object property.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To define private properties or meta-keys within complex objects.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const uniqueId = Symbol("id");</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 4 -->
+   <section class="guide-section" id="block-4">
+    <div class="section-heading">
+     <div class="section-number">
+      04
+     </div>
+     <div>
+      <p class="section-kicker">
+       DATA STRUCTURES
+      </p>
+      <h2>
+       Complex Data Structures (Objects, Arrays, Map, and Set)
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      Object (Object)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Serves to group collections of data using key-value pairs.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Models structured data by assigning property names to any computational data type or function.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To represent composite entities such as users, products, or configurations.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const person = { name: "Elena", age: 28, city: "San José" };</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Array (Array)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Stores ordered lists of numerically indexed values.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Maintains sequences of data where each element occupies a zero-based position (0, 1, 2...), offering built-in methods to transform the list.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      For item collections, task lists, or search results.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const fruits = ["Apple", "Banana", "Orange"];</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Map Structure
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Stores key-value pairs where any data type (including objects or functions) can be used as a key.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Maintains the original insertion order of elements and provides optimized operations for adding, searching, and deleting data.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      When keys other than strings are required or when read/write operations occur with high frequency.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const map = new Map(); map.set("id", 101); map.set(person, "Client");</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Set Structure
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Stores collections of unique values of any type without duplicates.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Evaluates the uniqueness of inserted data and automatically discards duplicate elements.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To remove duplicate elements from arrays or maintain lists of unique identifiers.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const uniqueValues = new Set([1, 2, 2, 3, 4, 4]);</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 5 -->
+   <section class="guide-section" id="block-5">
+    <div class="section-heading">
+     <div class="section-number">
+      05
+     </div>
+     <div>
+      <p class="section-kicker">
+       OPERATORS
+      </p>
+      <h2>
+       Arithmetic, Logical, Assignment, and Comparison Operators
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      Arithmetic Operators
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Perform basic mathematical calculations on variables and literals.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Processes addition (+), subtraction (-), multiplication (*), division (/), modulus or remainder (%), and exponentiation (**).
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      In any mathematical expression or incremental value updates.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>let total = (10 + 5) * 2; let remainder = 10 % 3;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Strict Comparison Operators (=== and !==)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Evaluate equality or inequality between two operands by comparing both value and data type.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Directly compares both sides without performing implicit type coercion, returning a boolean value.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      Always when performing logical comparisons to avoid bugs caused by automatic type conversion.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>if (age === 18) { console.log("Is of legal age."); }</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Logical Operators (&amp;&amp;, ||, !)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Combine or invert boolean condition evaluations.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      The AND operator (&amp;&amp;) requires both conditions to be true; the OR operator (||) requires at least one to be true; the NOT operator (!) inverts the boolean value.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To construct complex conditions that evaluate multiple factors simultaneously.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>if (hasAccount &amp;&amp; isConnected) { allowAccess(); }</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Ternary Operator (? :)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Provides concise single-line syntax to evaluate a condition and return one of two values.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Evaluates the expression on the left of the question mark; if true, it returns the first option; otherwise, it returns the option after the colon.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      For direct variable assignments based on simple conditions.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const status = age &gt;= 18 ? "Adult" : "Minor";</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Nullish Coalescing Operator (??)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Returns the right-hand operand only when the left-hand operand is null or undefined.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Unlike the OR operator, it does not treat falsy values like the number 0 or empty strings as triggers to fall back to the default value.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To safely assign default values to optional variables.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const limit = enteredLimit ?? 10;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Optional Chaining Operator (?.)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Reads the value of a nested object property without causing an error if the preceding property is null or undefined.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Evaluates the prior reference; if it is null or undefined, evaluation stops and returns undefined instead of throwing an exception.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      When accessing properties in network responses or objects with optional structures.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const city = user?.address?.city;</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 6 -->
+   <section class="guide-section" id="block-6">
+    <div class="section-heading">
+     <div class="section-number">
+      06
+     </div>
+     <div>
+      <p class="section-kicker">
+       FLOW CONTROL
+      </p>
+      <h2>
+       Conditional Flow Control and Branching
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      if...else Statement
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Executes different blocks of code based on the evaluation of a logical condition.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Redirects execution flow to the if block if the condition evaluates to true, or to the else block if it evaluates to false.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      For standard logical branching with multiple decision paths.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>if (score &gt;= 90) { console.log("Excellent"); } else { console.log("Passed"); }</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      switch Statement
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Evaluates an expression against multiple matching cases to execute specific instructions.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Strictly compares a central value against each case label, jumping to the matching block until encountering a break or end statement.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      When a single variable can take on multiple discrete values.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>switch (day) { case "Monday": console.log("Start"); break; default: console.log("Other day"); }</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 7 -->
+   <section class="guide-section" id="block-7">
+    <div class="section-heading">
+     <div class="section-number">
+      07
+     </div>
+     <div>
+      <p class="section-kicker">
+       LOOPS
+      </p>
+      <h2>
+       Loops, Iteration, and Generators
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      for Loop
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Repeats a block of code a set number of times using an explicit counter.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Initializes a control variable, checks a condition before each iteration, and updates the counter upon finishing the block.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      When the exact number of required iterations is known beforehand.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>for (let i = 0; i &lt; 5; i++) { console.log(i); }</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      while Loop
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Continuously executes a code block while a given condition remains true.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Evaluates the conditional expression at the start of each cycle; if positive, executes the internal instructions.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      When the number of repetitions depends on an unpredictable dynamic event or state.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>while (connected) { listenForRequests(); }</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      do...while Loop
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Executes a code block at least once and continues repeating it while a condition remains true.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Runs the instructions inside the block first, then evaluates the condition at the end of each cycle.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      When the block must run a mandatory initial execution before checking conditions.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>do { requestPassword(); } while (passwordInvalid);</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      for...of Loop
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Iterates directly over values of iterable data structures (Arrays, Strings, Sets, Maps).
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Extracts the individual value from each position in every cycle without requiring manual index management.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To cleanly iterate over entire arrays or collections.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const names = ["Ana", "Luis"]; for (const name of names) { console.log(name); }</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      for...in Loop
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Iterates over all enumerable properties of an object.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Loops through key names of an object during each iteration.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To inspect or iterate over internal keys of an object.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const car = { make: "Toyota", model: "Corolla" }; for (const key in car) { console.log(key); }</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 8 -->
+   <section class="guide-section" id="block-8">
+    <div class="section-heading">
+     <div class="section-number">
+      08
+     </div>
+     <div>
+      <p class="section-kicker">
+       FUNCTIONS
+      </p>
+      <h2>
+       Functions, Parameters, and Expressions
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      Declared Function (function)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Encapsulates a reusable code block with a named identifier for later invocation.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Registers the function in memory during the compile phase via hoisting, allowing it to be invoked before or after its physical declaration in the file.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To modularize recurrent tasks within core logic.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>function add(a, b) { return a + b; }</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Expressed Function (const name = function)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Assigns an anonymous function to a variable.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Treats the function as a value, preventing its use prior to the line where it is defined.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To isolate functions or pass them as arguments to other components.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const subtract = function(a, b) { return a - b; };</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Arrow Functions (=&gt;)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Offers concise syntax for writing functions while preserving lexical binding of the this context.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Declares an anonymous function using an arrow, omitting the function keyword and allowing implicit returns on single-line statements.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      For callbacks, helper functions, and array transformations.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const multiply = (a, b) =&gt; a * b;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Default Parameters
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Assigns default values to function parameters if no arguments are passed during invocation.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Checks if the passed argument is undefined; if so, assigns the preconfigured default value specified in the signature.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To avoid invalid or missing values when invoking functions.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>function greet(name = "Guest") { return "Hello " + name; }</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 9 -->
+   <section class="guide-section" id="block-9">
+    <div class="section-heading">
+     <div class="section-number">
+      09
+     </div>
+     <div>
+      <p class="section-kicker">
+       ADVANCED FUNCTIONS
+      </p>
+      <h2>
+       Advanced Functions, Closures, and Basic Asynchrony
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      Array Methods (map, filter, reduce)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Process, transform, filter, and aggregate elements within an array.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Executes a callback on each element. map creates a new transformed array; filter creates a conditional subset; reduce aggregates data into a single final value.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To manipulate data collections without imperative loops.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const numbers = [1, 2, 3]; const doubled = numbers.map(n =&gt; n * 2);</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      forEach Method
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Executes a provided function once for each element in an array.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Sequentially iterates through the list applying callback logic, without returning a new array.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      For side effects (e.g., logging or database storage) on each element.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>numbers.forEach(num =&gt; console.log(num));</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Closure Mechanism
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Allows an inner function to access the variable scope of an outer function even after the outer function has finished executing.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Retains a reference to its lexical environment created during definition, preserving the state of private variables.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To create private data, encapsulate logic, or generate specialized functions.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>function createCounter() { let c = 0; return function() { c++; return c; }; }</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      setTimeout Timer
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Schedules deferred execution of a function after a specified delay in milliseconds.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Hands off the specified function to the browser environment, executing it once the set timer expires.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      For delayed actions, timeouts, or scheduled animations.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>setTimeout(() =&gt; { console.log("Time elapsed"); }, 1000);</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      setInterval Timer
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Repeatedly executes a function at fixed time intervals.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Fires the assigned callback cyclically until explicitly cleared.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      For clocks, real-time polling, or recurring animations.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const id = setInterval(() =&gt; { console.log("Repeating"); }, 2000);</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      clearInterval Function
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Stops periodic execution previously initiated by setInterval.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Accepts the unique timer ID returned by setInterval and cancels future callback execution in the browser engine.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To stop clocks, counters, or repeating processes when a condition is met.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>clearInterval(id);</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 10 -->
+   <section class="guide-section" id="block-10">
+    <div class="section-heading">
+     <div class="section-number">
+      10
+     </div>
+     <div>
+      <p class="section-kicker">
+       DOM
+      </p>
+      <h2>
+       DOM Manipulation and Node Traversal
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      document.querySelector Function
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Finds and retrieves the first HTML element in the document matching a specified CSS selector.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Traverses the DOM structure and returns a direct reference to the first node matching the search criteria.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To select specific individual elements by ID, class, or tag.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const button = document.querySelector("#btn-save");</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      document.querySelectorAll Function
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Finds and retrieves all document elements matching a specified CSS selector.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Returns a static node collection (NodeList) containing all matching elements found.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To modify or iterate over multiple similar elements on the page.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const items = document.querySelectorAll(".list-item");</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      textContent Property
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Reads or updates the plain text content of a node and its descendants.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Replaces inner text while removing any prior child nodes, without parsing HTML tags.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To safely update text labels without risks of code injection.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>document.querySelector("h1").textContent = "New Title";</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      innerHTML Property
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Reads or inserts parsed HTML content inside an element.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Interprets the assigned string as HTML markup and builds corresponding DOM nodes within the container.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To render complex dynamic element structures.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>document.querySelector("#container").innerHTML = "&lt;p&gt;New text&lt;/p&gt;";</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      classList Object (add, remove, toggle)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Manipulates CSS classes assigned to a DOM element.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Modifies the element class list by adding (add), removing (remove), or toggling (toggle) class presence without affecting other existing classes.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To dynamically update visual styles or UI states.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>element.classList.add("active"); element.classList.toggle("visible");</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      document.createElement Function
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Creates a new HTML element node in memory.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Generates a detached element structure ready to be configured and inserted into the DOM.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To construct visual elements prior to rendering them on screen.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const newDiv = document.createElement("div");</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      appendChild / append Function
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Inserts a child node at the end of the child node list of a specified parent element.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Appends the new element into the active DOM, causing it to render on screen.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To render previously constructed elements on the page.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>document.body.appendChild(newDiv);</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 11 -->
+   <section class="guide-section" id="block-11">
+    <div class="section-heading">
+     <div class="section-number">
+      11
+     </div>
+     <div>
+      <p class="section-kicker">
+       BROWSER EVENT MANAGEMENT
+      </p>
+      <h2>
+       Browser Event Management and Propagation
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      addEventListener Method
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Registers an event listener on a DOM graphical element.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Listens for user interactions (clicks, keypresses, scrolls) and executes a function at the precise moment the action occurs.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To add interactive capabilities to buttons, forms, and visual elements.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const btn = document.querySelector("button"); btn.addEventListener("click", () =&gt; { console.log("Click"); });</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      removeEventListener Method
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Removes a previously registered event listener from a DOM element.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Unbinds the assigned handler function, preventing it from executing during future trigger events.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To clean up memory resources or disable temporary user interactions.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>element.removeEventListener("click", handlerFunction);</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      event.preventDefault() Method
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Cancels the browser default action associated with a given event.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Interrupts native behavior (such as page reloading upon form submission or link navigation).
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      When validating form data using JavaScript prior to submission.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>form.addEventListener("submit", (e) =&gt; { e.preventDefault(); });</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      event.stopPropagation() Method
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Prevents event propagation to parent elements within the DOM tree.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Stops the bubbling phase of an event at the current node so parent handlers are not triggered.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To prevent inner element actions from triggering event handlers installed on ancestor containers.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>btn.addEventListener("click", (e) =&gt; { e.stopPropagation(); });</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 12 -->
+   <section class="guide-section" id="block-12">
+    <div class="section-heading">
+     <div class="section-number">
+      12
+     </div>
+     <div>
+      <p class="section-kicker">
+       ASYNCHRONOUS PROGRAMMING
+      </p>
+      <h2>
+       Advanced Asynchronous Programming, Fetch API, and AJAX
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      Promise Object
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Represents eventual completion or failure of an asynchronous operation.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Manages internal states (pending, fulfilled, rejected) and enables chaining response handlers.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To structure asynchronous operations such as network requests or data loading.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const myPromise = new Promise((resolve, reject) =&gt; { resolve("Success"); });</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      .then() and .catch() Methods
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Process successful resolution or rejection of a Promise.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      .then() receives fulfilled promise results, while .catch() captures errors occurring anywhere along the chain.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To handle asynchronous responses in traditional promise chains.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>myPromise.then(res =&gt; console.log(res)).catch(err =&gt; console.error(err));</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      async / await Keywords
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Write asynchronous code with syntax that resembles synchronous execution flow.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      async implicitly wraps function returns in a promise, while await pauses execution inside the function until the promise resolves.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To simplify handling asynchronous network calls.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>async function load() { const res = await fetch("https://api.com"); }</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      fetch() Function
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Initiates HTTP network requests to query or send data to servers or APIs.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Issues requests using the Fetch standard and returns a promise resolving to the corresponding HTTP response.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To consume RESTful APIs, load JSON data, or interact with backend services.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>fetch("https://api.com/data").then(res =&gt; res.json());</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 13 -->
+   <section class="guide-section" id="block-13">
+    <div class="section-heading">
+     <div class="section-number">
+      13
+     </div>
+     <div>
+      <p class="section-kicker">
+       OBJECT-ORIENTED
+      </p>
+      <h2>
+       Object-Oriented Programming, Classes, and Prototypes
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      class Declaration
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Defines blueprints for creating objects using object-oriented programming concepts.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Acts as syntactic sugar over native prototype-based inheritance in JavaScript.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To model composite entities, UI components, or structures with associated data and behavior.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>class User { constructor(name) { this.name = name; } }</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      constructor Method
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Initializes object instance properties upon creation.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Executes automatically at the precise moment a class is instantiated using the new operator.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To assign required initial values to every newly created object.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>constructor(name, age) { this.name = name; this.age = age; }</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      extends and super Keywords
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Implement inheritance between classes to reuse parent class code.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      extends establishes inheritance relationships, while super invokes the parent constructor.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To build specialized child classes derived from a base class.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>class Client extends User { constructor(name, id) { super(name); this.id = id; } }</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 14 -->
+   <section class="guide-section" id="block-14">
+    <div class="section-heading">
+     <div class="section-number">
+      14
+     </div>
+     <div>
+      <p class="section-kicker">
+       EXCEPTIONS AND DEBUGGING
+      </p>
+      <h2>
+       Error Handling, Exceptions, and Debugging
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      try...catch...finally Structure
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Catches and manages runtime failures without crashing the application.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Evaluates code inside the try block; if an error occurs, control transfers to catch. The finally block always runs at completion.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      During external API calls, data parsing, or operations prone to runtime exceptions.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>try { JSON.parse("{ malformed }"); } catch (err) { console.log(err.message); }</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      throw Statement
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Generates an explicit custom exception or error.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Interrupts normal execution flow and passes control to the nearest catch block in the call stack.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To validate requirements or halt execution when data fails expected conditions.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>if (!age) { throw new Error("Age is required"); }</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      console Object (log, warn, error, table)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Output messages, warnings, errors, and structured data into developer tools consoles.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Sends debugging information directly to browser or runtime developer tools.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      During development to inspect variables and verify application flow.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>console.log("Message"); console.table([{ a: 1 }, { a: 2 }]);</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 15 -->
+   <section class="guide-section" id="block-15">
+    <div class="section-heading">
+     <div class="section-number">
+      15
+     </div>
+     <div>
+      <p class="section-kicker">
+       ES MODULES
+      </p>
+      <h2>
+       Modules and Code Architecture (ES Modules)
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      export Statement
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Exports functions, objects, classes, or variables from a JavaScript file for use in other modules.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Exposes selected elements outside the local file scope.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To build internal libraries, utility helpers, and modular components.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>export const calculate = (a) =&gt; a * 2;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      import Statement
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Imports components or functions exported from other JavaScript modules.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Reads elements exposed by another file and incorporates their references into current local scope.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To integrate utility functions or components from separate files.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>import { calculate } from "./utilities.js";</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 16 -->
+   <section class="guide-section" id="block-16">
+    <div class="section-heading">
+     <div class="section-number">
+      16
+     </div>
+     <div>
+      <p class="section-kicker">
+       LOCAL DATA
+      </p>
+      <h2>
+       Local Storage, Cookies, and Persistence
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      localStorage Object
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Stores data persistently in the user browser without expiration dates.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Saves key-value pairs in plain text format directly inside the client browser.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To save user configurations, UI preferences, or persistent session tokens.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>localStorage.setItem("theme", "dark"); const theme = localStorage.getItem("theme");</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      sessionStorage Object
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Stores data temporarily in the browser for the duration of the active tab session.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Retains memory while the tab or window remains open, clearing all entries upon tab closure.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To store temporary form states or single-session navigation data.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>sessionStorage.setItem("step", "2");</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      document.cookie Property
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Reads or writes session cookies associated with the current domain.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Assigns formatted key-value strings alongside optional security and expiration parameters.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To store small session tokens required automatically on every HTTP request to the server.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>document.cookie = "user=Juan; expires=Thu, 18 Dec 2026 12:00:00 UTC; path=/";</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 17 -->
+   <section class="guide-section" id="block-17">
+    <div class="section-heading">
+     <div class="section-number">
+      17
+     </div>
+     <div>
+      <p class="section-kicker">
+       REGEX
+      </p>
+      <h2>
+       Regular Expressions (RegEx) and String Methods
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      RegExp Object
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Creates search patterns to validate or transform text strings.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Evaluates text sequences searching for pattern matches using methods like test or match.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To validate formatting on emails, phone numbers, or passwords.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; const isValid = pattern.test("email@test.com");</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      String Methods (includes, replace, slice)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Search, replace, or extract text segments within a string.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      includes verifies text existence; replace substitutes a matching segment; slice extracts a section of text.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To sanitize, format, or inspect text input.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const text = "Hello World"; const sub = text.slice(0, 5);</pre>
+     </p>
+    </article>
+   </section>
+   <!-- BLOCK 18 -->
+   <section class="guide-section" id="block-18">
+    <div class="section-heading">
+     <div class="section-number">
+      18
+     </div>
+     <div>
+      <p class="section-kicker">
+       ESNEXT
+      </p>
+      <h2>
+       System APIs, Workers, and Modern Features (ESNext)
+      </h2>
+     </div>
+    </div>
+    <article>
+     <h3>
+      Destructuring
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Unpacks values from arrays or properties from objects directly into distinct variables.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Extracts keys from a structure, automatically assigning corresponding values to named variables.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To simplify accessing properties from configuration objects or API responses.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const config = { port: 8080, host: "localhost" }; const { port, host } = config;</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Spread Operator (...)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Expands collection elements into a new destination.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Unrolls individual elements of an array or object into a newly initialized array or object.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      To clone or merge objects and arrays without mutating original references.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>const original = [1, 2]; const copy = [...original, 3, 4];</pre>
+     </p>
+    </article>
+    <article>
+     <h3>
+      Rest Parameter (...rest)
+     </h3>
+     <p>
+      <strong class="label-meta">
+       Function:
+      </strong>
+      Collects an indefinite number of arguments passed to a function into a single array.
+     </p>
+     <p>
+      <strong class="label-meta">
+       How it works:
+      </strong>
+      Gathers remaining parameters into an array accessible within the function body.
+     </p>
+     <p>
+      <strong class="label-meta">
+       When to use:
+      </strong>
+      In variadic functions accepting variable amounts of arguments.
+     </p>
+     <p>
+      <strong class="label-syntax">
+       Syntax:
+      </strong>
+      <pre>function sumAll(...numbers) { return numbers.reduce((a, b) =&gt; a + b, 0); }</pre>
+     </p>
+    </article>
+   </section>
+  </main>
+  <footer class="site-footer">
+   <p>
+    Web Dev Guide
+    <span aria-hidden="true">
+     ·
+    </span>
+    HTML · CSS ·
+    <span>
+     JavaScript
+    </span>
+   </p>
+  </footer>
+  <button aria-label="Volver arriba" class="btn-back-to-top" id="btn-back-to-top">
+   ↑
+  </button>
+  <button aria-label="Back to top" class="btn-back-to-top" id="btn-back-to-top">
+   ↑
+  </button>
+  <script>
+   const searchInput = document.getElementById('search-input');
+
+  function scrollToMatch() {
+    const filter = searchInput.value.toLowerCase().trim();
+    if (!filter) return;
+
+    const articles = document.querySelectorAll('main article');
+
+    for (const article of articles) {
+      const text = article.textContent.toLowerCase();
+
+      if (text.includes(filter)) {
+        article.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+
+        article.classList.add('search-hit');
+
+        setTimeout(() => {
+          article.classList.remove('search-hit');
+        }, 1500);
+
+        break;
+      }
+    }
+  }
+
+  searchInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      scrollToMatch();
+    }
+  });
+
+  searchInput.addEventListener('change', scrollToMatch);
+  </script>
+  <script>
+   const header = document.querySelector('.tech-header');
+  const backToTopBtn = document.getElementById('btn-back-to-top');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      backToTopBtn.classList.toggle('visible', !entry.isIntersecting);
+    });
+  }, { threshold: 0 });
+
+  if (header) {
+    observer.observe(header);
+  }
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  </script>
+ </body>
+</html>
